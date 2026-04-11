@@ -1,0 +1,58 @@
+[
+  {
+    "levelId": 1,
+    "title": "第一位客人",
+    "description": "教學關卡：帶你熟悉完整流程",
+    "customerId": "yuchen",
+    "patternId": "pink_heart_basic",
+    "isHardClient": false,
+    "budgetMin": 400,
+    "budgetMax": 700,
+    "standardPrice": 500,
+    "timeLimitSeconds": 180,
+    "complaintThreshold": 30,
+    "complaintTriggered": false
+  },
+  {
+    "levelId": 2,
+    "title": "細節控客人",
+    "description": "需求模糊、參考圖很多張",
+    "customerId": "eva",
+    "patternId": "nude_gold_flower",
+    "isHardClient": false,
+    "budgetMin": 600,
+    "budgetMax": 900,
+    "standardPrice": 800,
+    "timeLimitSeconds": 200,
+    "complaintThreshold": 45,
+    "complaintTriggered": false
+  },
+  {
+    "levelId": 3,
+    "title": "低預算高要求",
+    "description": "想做複雜設計，但預算很低",
+    "customerId": "mandy",
+    "patternId": "multi_element",
+    "isHardClient": true,
+    "budgetMin": 200,
+    "budgetMax": 350,
+    "standardPrice": 900,
+    "timeLimitSeconds": 240,
+    "complaintThreshold": 50,
+    "complaintTriggered": false
+  },
+  {
+    "levelId": 4,
+    "title": "故意刁難的客人",
+    "description": "要求「跟照片完全一樣」",
+    "customerId": "karen",
+    "patternId": "complex_art",
+    "isHardClient": true,
+    "budgetMin": 1200,
+    "budgetMax": 1500,
+    "standardPrice": 1200,
+    "timeLimitSeconds": 240,
+    "complaintThreshold": 15,
+    "complaintTriggered": true
+  }
+]
