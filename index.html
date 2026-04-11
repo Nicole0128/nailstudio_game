@@ -1,16 +1,429 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-  <title>指尖上的創業 — 美甲工作室模擬</title>
-  <link rel="stylesheet" href="src/ui/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>美甲師生存日記 - 沉浸式前導</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap');
+        
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #d1d5db;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100dvh;
+            margin: 0;
+            overflow: hidden;
+            touch-action: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        #game-app {
+            width: 100%;
+            height: 100%;
+            max-width: 480px;
+            background-color: #FAF8F5; /* 奶油白 */
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .scene {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .scene.active { display: block; }
+
+        /* 高對比質感色票 */
+        .color-accent { background-color: #B48B84; } 
+        .text-accent { color: #B48B84; } 
+        .text-dark { color: #1A1A1A; } 
+        
+        /* 基礎動畫 */
+        .fade-in { animation: fadeIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .slide-up { animation: slideUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+        /* 動態背景滑動 */
+        @keyframes feedScroll {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50%); }
+        }
+        .animate-feed-scroll { animation: feedScroll 40s linear infinite; }
+        
+        /* 3D 資訊卡翻轉設定 */
+        .perspective-1000 { perspective: 1000px; }
+        .transform-style-3d { transform-style: preserve-3d; }
+        .backface-hidden { backface-visibility: hidden; }
+        .rotate-y-180 { transform: rotateY(180deg); }
+
+        /* 毛玻璃效果 */
+        .glass-light {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 1);
+        }
+        .glass-dark {
+            background: rgba(26, 26, 26, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        ::-webkit-scrollbar { display: none; }
+        
+        /* 圖片佔位符樣式 (避免本機圖片未放入時版面崩壞) */
+        .img-placeholder {
+            background-color: #E8D5C4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #A3736A;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-  <div id="game-container"></div>
-  <!-- Phaser 3 -->
-  <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
-  <!-- 遊戲主程式 -->
-  <script type="module" src="src/main.js"></script>
+
+<div id="game-app">
+
+    <div class="absolute inset-0 flex justify-between z-[100] pointer-events-none" id="nav-controls">
+        <div class="w-1/5 h-full pointer-events-auto cursor-pointer flex items-center justify-start p-2 opacity-0 hover:opacity-100 transition-opacity" onclick="prevIntro(event)">
+            <div class="w-8 h-16 rounded-r-xl bg-black/10 flex items-center justify-center text-white backdrop-blur-sm">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            </div>
+        </div>
+        <div class="w-1/5 h-full pointer-events-auto cursor-pointer flex items-center justify-end p-2 opacity-30 hover:opacity-100 transition-opacity" onclick="nextIntro(event)">
+            <div class="w-8 h-16 rounded-l-xl bg-black/10 flex items-center justify-center text-white backdrop-blur-sm">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="absolute top-4 left-4 right-4 flex gap-1 z-[90]" id="nav-progress">
+        <div class="h-1 bg-black/20 flex-1 rounded-full overflow-hidden"><div id="prog-fill-1" class="h-full bg-white transition-all duration-300 w-0 shadow-[0_0_5px_rgba(255,255,255,0.8)]"></div></div>
+        <div class="h-1 bg-black/20 flex-1 rounded-full overflow-hidden"><div id="prog-fill-2" class="h-full bg-white transition-all duration-300 w-0 shadow-[0_0_5px_rgba(255,255,255,0.8)]"></div></div>
+        <div class="h-1 bg-black/20 flex-1 rounded-full overflow-hidden"><div id="prog-fill-3" class="h-full bg-white transition-all duration-300 w-0 shadow-[0_0_5px_rgba(255,255,255,0.8)]"></div></div>
+        <div class="h-1 bg-black/20 flex-1 rounded-full overflow-hidden"><div id="prog-fill-4" class="h-full bg-white transition-all duration-300 w-0 shadow-[0_0_5px_rgba(255,255,255,0.8)]"></div></div>
+    </div>
+
+    <div id="intro-hint" class="absolute top-16 right-4 z-[90] pointer-events-none fade-in">
+        <span class="bg-black/70 text-white text-[10px] px-4 py-2 rounded-full backdrop-blur-md tracking-widest flex items-center gap-1 font-bold shadow-lg">
+            點擊右側繼續
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </span>
+    </div>
+
+    <div id="scene-intro" class="scene active text-dark">
+        
+        <div id="intro-slide-1" class="absolute inset-0 flex flex-col justify-end pb-12 px-5 opacity-0 hidden transition-opacity duration-500 z-10 bg-[#FAF8F5]">
+            <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-95 z-[-1]">
+                <div class="animate-feed-scroll flex flex-col gap-5 p-3 pt-20">
+                    
+                    <div class="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100">
+                        <div class="p-3 flex items-center gap-2">
+                            <div class="w-8 h-8 rounded-full bg-[#1A1A1A] text-white flex items-center justify-center font-bold text-xs">L</div>
+                            <span class="text-xs font-bold text-dark">Luxury_Nails_Studio</span>
+                        </div>
+                        <img src="./images/Gemini_Generated_Image_iw3ctsiw3ctsiw3c.jpg" class="w-full h-[300px] object-cover img-placeholder" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-[300px] img-placeholder hidden">圖片遺失<br>Gemini_Generated_Image_iw3ctsiw3ctsiw3c.jpg</div>
+                        <div class="p-3 text-[13px] text-gray-700 font-medium leading-relaxed">
+                            <span class="font-bold">Luxury_Nails_Studio</span> 本月爆款🔥 華麗歐美長甲＋極致碎鑽堆疊！排單已滿到下個月囉🥺 #網紅同款 #奢華美甲 #延甲
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100">
+                        <div class="p-3 flex items-center gap-2">
+                            <div class="w-8 h-8 rounded-full bg-[#B48B84] text-white flex items-center justify-center font-bold text-xs">A</div>
+                            <span class="text-xs font-bold text-dark">Aesthetic_Nails</span>
+                        </div>
+                        <img src="./images/Gemini_Generated_Image_8q7hp98q7hp98q7h.jpg" class="w-full h-[300px] object-cover img-placeholder" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-[300px] img-placeholder hidden">圖片遺失<br>Gemini_Generated_Image_8q7hp98q7hp98q7h.jpg</div>
+                        <div class="p-3 text-[13px] text-gray-700 font-medium leading-relaxed">
+                            <span class="font-bold">Aesthetic_Nails</span> 仙氣爆表✨ 晶瑩剔透的水光腮紅甲，純慾感拉滿，仙女必備款！私訊預約保留名額～
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100">
+                        <div class="p-3 flex items-center gap-2">
+                            <div class="w-8 h-8 rounded-full bg-gray-600 text-white flex items-center justify-center font-bold text-xs">V</div>
+                            <span class="text-xs font-bold text-dark">Vibe_Nails_Lab</span>
+                        </div>
+                        <img src="./images/Gemini_Generated_Image_j2n4c6j2n4c6j2n4.jpg" class="w-full h-[300px] object-cover img-placeholder" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-[300px] img-placeholder hidden">圖片遺失<br>Gemini_Generated_Image_j2n4c6j2n4c6j2n4.jpg</div>
+                        <div class="p-3 text-[13px] text-gray-700 font-medium leading-relaxed">
+                            <span class="font-bold">Vibe_Nails_Lab</span> 個性辣妹看過來🖤 Y2K金屬感火焰 feat. 立體櫻桃，不撞款的絕對領域。 #特殊設計 #美甲工作室
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100">
+                        <div class="p-3 flex items-center gap-2">
+                            <div class="w-8 h-8 rounded-full bg-[#1e3a8a] text-white flex items-center justify-center font-bold text-xs">E</div>
+                            <span class="text-xs font-bold text-dark">Elegance_Beauty</span>
+                        </div>
+                        <img src="./images/Gemini_Generated_Image_ioowftioowftioow.jpg" class="w-full h-[300px] object-cover img-placeholder" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-[300px] img-placeholder hidden">圖片遺失<br>Gemini_Generated_Image_ioowftioowftioow.jpg</div>
+                        <div class="p-3 text-[13px] text-gray-700 font-medium leading-relaxed">
+                            <span class="font-bold">Elegance_Beauty</span> 氣質午夜藍深邃又顯白💙 搭配俐落幾何金線與精緻排鑽，高級感滿滿。
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100">
+                        <div class="p-3 flex items-center gap-2">
+                            <div class="w-8 h-8 rounded-full bg-[#064e3b] text-white flex items-center justify-center font-bold text-xs">A</div>
+                            <span class="text-xs font-bold text-dark">Art_Nails_TW</span>
+                        </div>
+                        <img src="./images/Gemini_Generated_Image_z1iglqz1iglqz1ig.jpg" class="w-full h-[300px] object-cover img-placeholder" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-[300px] img-placeholder hidden">圖片遺失<br>Gemini_Generated_Image_z1iglqz1iglqz1ig.jpg</div>
+                        <div class="p-3 text-[13px] text-gray-700 font-medium leading-relaxed">
+                            <span class="font-bold">Art_Nails_TW</span> 復古綠瑪瑙🌿 絕美礦石暈染層次，加上細緻的金邊與水鑽，宛如指尖上的藝術品。
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100">
+                        <div class="p-3 flex items-center gap-2">
+                            <div class="w-8 h-8 rounded-full bg-[#1A1A1A] text-white flex items-center justify-center font-bold text-xs">L</div>
+                            <span class="text-xs font-bold text-dark">Luxury_Nails_Studio</span>
+                        </div>
+                        <img src="./images/Gemini_Generated_Image_iw3ctsiw3ctsiw3c.jpg" class="w-full h-[300px] object-cover img-placeholder" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="p-3 text-[13px] text-gray-700 font-medium leading-relaxed">
+                            <span class="font-bold">Luxury_Nails_Studio</span> 本月爆款🔥 華麗歐美長甲＋極致碎鑽堆疊！排單已滿到下個月囉🥺 #網紅同款 #奢華美甲 #延甲
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100">
+                        <div class="p-3 flex items-center gap-2">
+                            <div class="w-8 h-8 rounded-full bg-[#B48B84] text-white flex items-center justify-center font-bold text-xs">A</div>
+                            <span class="text-xs font-bold text-dark">Aesthetic_Nails</span>
+                        </div>
+                        <img src="./images/Gemini_Generated_Image_8q7hp98q7hp98q7h.jpg" class="w-full h-[300px] object-cover img-placeholder" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="p-3 text-[13px] text-gray-700 font-medium leading-relaxed">
+                            <span class="font-bold">Aesthetic_Nails</span> 仙氣爆表✨ 晶瑩剔透的水光腮紅甲，純慾感拉滿，仙女必備款！私訊預約保留名額～
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div class="glass-dark text-white p-6 rounded-3xl shadow-2xl slide-up border border-white/10">
+                <p class="text-[15px] leading-relaxed font-light tracking-wide">
+                    「近年，美甲從美容服務，變成許多年輕人眼中的<b class="font-bold text-white">低門檻創業神話</b>。<br><br>社群平台上滿是華麗複雜的網紅爆款，個人工作室也隨之暴增...」
+                </p>
+            </div>
+        </div>
+
+        <div id="intro-slide-2" class="absolute inset-0 flex flex-col justify-center items-center px-6 opacity-0 hidden transition-opacity duration-500 z-10 bg-[#FAF8F5]">
+            
+            <div class="bg-white rounded-3xl overflow-hidden w-full mb-8 z-30 slide-up card-shadow border border-gray-100">
+                <div class="p-4 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-[#1A1A1A] text-white flex items-center justify-center font-bold text-sm">T</div>
+                    <div>
+                        <div class="text-[13px] font-bold text-dark">Top_Nail_Aesthetics</div>
+                        <div class="text-[10px] text-gray-400 font-bold">贊助</div>
+                    </div>
+                    <svg class="w-5 h-5 ml-auto text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                </div>
+                <img src="./images/Gemini_Generated_Image_9rpy4r9rpy4r9rpy.jpg" class="w-full h-[340px] object-cover img-placeholder" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="w-full h-[340px] img-placeholder hidden">圖片遺失<br>Gemini_Generated_Image_9rpy4r9rpy4r9rpy.jpg</div>
+                
+                <div class="p-5">
+                    <div class="text-sm font-bold text-dark mb-1">12,504 次讚</div>
+                    <div class="text-[13px] text-gray-700 leading-relaxed"><span class="font-bold text-dark">Top_Nail_Aesthetics</span> 極致保養與水潤裸色打底，單顆精緻鑽飾點綴出不凡品味💅 細節控專屬。</div>
+                </div>
+            </div>
+            
+            <div class="glass-dark text-white p-6 rounded-3xl shadow-2xl z-30 w-full slide-up border border-white/10" style="animation-delay: 0.1s;">
+                <p class="text-[15px] leading-relaxed font-light tracking-wide">
+                    「但在社群流量、濾鏡審美與看似無門檻的表象之外...<br><br>這份工作，真的只要<b class="font-bold">『把指甲畫得閃閃發亮』</b>這麼簡單嗎？」
+                </p>
+            </div>
+        </div>
+
+        <div id="intro-slide-3" class="absolute inset-0 flex flex-col pt-24 px-5 opacity-0 hidden transition-opacity duration-500 z-10 bg-[#FAF8F5]">
+            <div class="absolute inset-0 w-full h-full bg-[#FAF8F5] z-[-1]">
+                <img src="./images/Gemini_Generated_Image_5wnxcn5wnxcn5wnx.jpg" class="w-full h-full object-cover opacity-15 mix-blend-multiply" onerror="this.style.display='none';">
+            </div>
+            
+            <div class="text-center mb-4 z-20">
+                <h2 class="text-xl font-bold text-dark tracking-wider mb-1">產業背後的現實</h2>
+                <div class="inline-flex items-center gap-1.5 bg-white/80 px-3 py-1 rounded-full shadow-sm text-accent text-[10px] font-bold tracking-widest uppercase border border-gray-100">
+                    <svg class="w-3 h-3 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2z"></path></svg>
+                    輕觸卡片翻面
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-4 w-full z-20 pb-10">
+                
+                <div class="w-full h-[120px] relative perspective-1000 cursor-pointer pointer-events-auto" onclick="this.querySelector('.flipper').classList.toggle('rotate-y-180');">
+                    <div class="flipper w-full h-full transition-transform duration-500 transform-style-3d relative">
+                        <div class="absolute w-full h-full backface-hidden glass-light rounded-2xl shadow-sm flex items-center p-5">
+                            <div class="w-12 h-12 bg-[#FAF8F5] rounded-full flex items-center justify-center mr-4 shadow-inner">
+                                <span class="text-xl">📈</span>
+                            </div>
+                            <div>
+                                <h3 class="text-[17px] font-black text-dark tracking-wide mb-1">產業急速擴張</h3>
+                                <p class="text-[11px] text-gray-500 font-bold uppercase tracking-widest">Industry Growth</p>
+                            </div>
+                        </div>
+                        <div class="absolute w-full h-full backface-hidden rotate-y-180 bg-[#1A1A1A] rounded-2xl shadow-lg flex flex-col justify-center p-5 text-white">
+                            <ul class="space-y-2 text-[13px] font-light leading-relaxed">
+                                <li class="flex items-start gap-2"><span class="text-accent mt-0.5">▪</span>美甲美睫產業快速成長</li>
+                                <li class="flex items-start gap-2"><span class="text-accent mt-0.5">▪</span>個人工作室數量直線攀升</li>
+                                <li class="flex items-start gap-2"><span class="text-accent mt-0.5">▪</span>青年創業、斜槓的熱門選項</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full h-[120px] relative perspective-1000 cursor-pointer pointer-events-auto" onclick="this.querySelector('.flipper').classList.toggle('rotate-y-180');">
+                    <div class="flipper w-full h-full transition-transform duration-500 transform-style-3d relative">
+                        <div class="absolute w-full h-full backface-hidden glass-light rounded-2xl shadow-sm flex items-center p-5">
+                            <div class="w-12 h-12 bg-[#FAF8F5] rounded-full flex items-center justify-center mr-4 shadow-inner">
+                                <span class="text-xl">⚠️</span>
+                            </div>
+                            <div>
+                                <h3 class="text-[17px] font-black text-dark tracking-wide mb-1">低門檻與模糊標準</h3>
+                                <p class="text-[11px] text-gray-500 font-bold uppercase tracking-widest">Vague Standards</p>
+                            </div>
+                        </div>
+                        <div class="absolute w-full h-full backface-hidden rotate-y-180 bg-[#1A1A1A] rounded-2xl shadow-lg flex flex-col justify-center p-5 text-white">
+                            <ul class="space-y-2 text-[13px] font-light leading-relaxed">
+                                <li class="flex items-start gap-2"><span class="text-accent mt-0.5">▪</span>社群經營讓接案更容易</li>
+                                <li class="flex items-start gap-2"><span class="text-accent mt-0.5">▪</span>不一定有專業證照也能接客</li>
+                                <li class="flex items-start gap-2"><span class="text-accent mt-0.5">▪</span>看濾鏡美圖，忽視衛生標準</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full h-[120px] relative perspective-1000 cursor-pointer pointer-events-auto" onclick="this.querySelector('.flipper').classList.toggle('rotate-y-180');">
+                    <div class="flipper w-full h-full transition-transform duration-500 transform-style-3d relative">
+                        <div class="absolute w-full h-full backface-hidden glass-light rounded-2xl shadow-sm flex items-center p-5">
+                            <div class="w-12 h-12 bg-[#FAF8F5] rounded-full flex items-center justify-center mr-4 shadow-inner">
+                                <span class="text-xl">💥</span>
+                            </div>
+                            <div>
+                                <h3 class="text-[17px] font-black text-dark tracking-wide mb-1">風險與糾紛成本</h3>
+                                <p class="text-[11px] text-gray-500 font-bold uppercase tracking-widest">Hidden Risks</p>
+                            </div>
+                        </div>
+                        <div class="absolute w-full h-full backface-hidden rotate-y-180 bg-[#1A1A1A] rounded-2xl shadow-lg flex flex-col justify-center p-5 text-white">
+                            <ul class="space-y-1.5 text-[13px] font-light leading-relaxed">
+                                <li class="flex items-start gap-2"><span class="text-red-400 font-bold mt-0.5">▪</span>修圖落差引發期待不符與客訴</li>
+                                <li class="flex items-start gap-2"><span class="text-red-400 font-bold mt-0.5">▪</span>技術不穩導致客人指甲發炎</li>
+                                <li class="flex items-start gap-2"><span class="text-red-400 font-bold mt-0.5">▪</span>申訴繁瑣，多數人選擇吞下負評</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="intro-slide-4" class="absolute inset-0 flex flex-col justify-center items-center px-6 opacity-0 hidden transition-opacity duration-500 z-10 bg-white">
+            <div class="absolute inset-0 w-full h-full bg-gray-100 z-[-1]">
+                <img src="./images/Gemini_Generated_Image_rtzqxlrtzqxlrtzq.jpg" class="w-full h-full object-cover opacity-35 img-placeholder" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="w-full h-full img-placeholder hidden">圖片遺失<br>Gemini_Generated_Image_rtzqxlrtzqxlrtzq.jpg</div>
+            </div>
+            
+            <div class="relative z-30 glass-light p-8 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.15)] text-center w-full max-w-sm">
+                
+                <div class="w-16 h-16 bg-[#1A1A1A] rounded-full mx-auto mb-6 flex items-center justify-center shadow-md">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </div>
+
+                <h2 class="text-2xl font-black text-dark mb-4 tracking-wider">準備好營業了嗎？</h2>
+
+                <p class="text-[14px] text-gray-600 mb-8 font-medium leading-relaxed text-left px-2">
+                    接下來，你要成為一名美甲師。<br><br>
+                    親自接客、溝通報價、處理華麗的網紅款，甚至面對刁鑽的奧客。<br><br>
+                    <span class="font-bold text-dark block text-center mt-4 border-t border-gray-200 pt-4 text-[15px]">你的每個決定，<br>都攸關這間工作室的存亡。</span>
+                </p>
+
+                <button class="relative z-50 w-full bg-[#1A1A1A] text-white font-bold text-[16px] py-4 rounded-xl shadow-lg hover:bg-black transition transform active:scale-95 tracking-widest" onclick="alert('前導階段結束！準備進入工作室經營與美甲實作。'); event.stopPropagation();">
+                    進入工作室
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    /* ==========================================
+       前導系統腳本 (Intro System)
+       ========================================== */
+    let introStep = 1;
+    const totalIntroSteps = 4;
+
+    function initIntro() {
+        renderIntro();
+    }
+
+    function renderIntro() {
+        for(let i=1; i<=totalIntroSteps; i++) {
+            const bar = document.getElementById(`prog-fill-${i}`);
+            if(i <= introStep) {
+                bar.style.width = '100%';
+            } else {
+                bar.style.width = '0%';
+            }
+            
+            const slide = document.getElementById(`intro-slide-${i}`);
+            if(i === introStep) {
+                slide.classList.remove('hidden');
+                setTimeout(() => {
+                    slide.classList.remove('opacity-0');
+                    slide.classList.add('opacity-100');
+                }, 50); 
+            } else {
+                slide.classList.remove('opacity-100');
+                slide.classList.add('opacity-0');
+                setTimeout(() => {
+                    if(introStep !== i) slide.classList.add('hidden');
+                }, 500);
+            }
+        }
+
+        const hint = document.getElementById('intro-hint');
+        if(introStep > 1 && hint) {
+            hint.classList.replace('fade-in', 'opacity-0');
+            setTimeout(() => hint.style.display = 'none', 500);
+        }
+    }
+
+    function nextIntro(e) {
+        if(e) e.stopPropagation(); 
+        if(introStep < totalIntroSteps) {
+            introStep++;
+            renderIntro();
+        }
+    }
+
+    function prevIntro(e) {
+        if(e) e.stopPropagation();
+        if(introStep > 1) {
+            introStep--;
+            renderIntro();
+        }
+    }
+
+    window.onload = () => {
+        initIntro();
+    };
+</script>
 </body>
 </html>
