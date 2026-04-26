@@ -1,0 +1,4415 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>指尖上的產業擴張｜台灣美甲產業專題</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500&family=DM+Serif+Display:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F7F3ED;
+    --ivory: #EDE8DF;
+    --warm-white: #FAF8F5;
+    --parchment: #E8E1D6;
+    --nude: #D4C4B0;
+    --blush-mist: #E8D5CB;
+    --rose-water: #F2F4EF;
+    --line-green: #DDE5D7;
+    --line-green-accent: #A9C59B;
+    --dusty-rose: #C9A99A;
+    --rose-accent: #B8907F;
+    --text-dark: #2C2520;
+    --text-mid: #5C4F46;
+    --text-light: #8C7D74;
+    --text-faint: #AFA29A;
+    --serif: 'Cormorant Garamond', 'Noto Serif TC', serif;
+    --sans: 'Noto Sans TC', sans-serif;
+    --display: 'DM Serif Display', 'Noto Serif TC', serif;
+    --line-body: 2.0;
+    --line-head: 1.3;
+    --nav-offset: 96px;
+    --section-offset: 112px;
+    --parallax-text: 0px;
+    --parallax-image: 0px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--warm-white);
+    color: var(--text-dark);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: var(--line-body);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.25rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    transition: background 0.4s, border-bottom 0.4s;
+  }
+  nav.scrolled {
+    background: rgba(247,243,237,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--parchment);
+  }
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--text-dark);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    font-weight: 400;
+  }
+  .nav-chapters {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-chapters a {
+    position: relative;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    color: var(--text-mid);
+    text-decoration: none;
+    transition: color 0.25s ease;
+    font-family: var(--sans);
+    font-weight: 400;
+    padding-bottom: 0.35rem;
+  }
+  .nav-chapters a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: var(--dusty-rose);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    opacity: 0;
+  }
+  .nav-chapters a:hover,
+  .nav-chapters a.active {
+    color: var(--text-dark);
+  }
+  .nav-chapters a.active::after,
+  .nav-chapters a:hover::after {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.25rem; }
+    .nav-chapters { display: none; }
+    :root { --nav-offset: 78px; --section-offset: 94px; }
+  }
+
+ #hero {
+  min-height: 100vh;
+  background: var(--cream);
+  display: grid;
+  grid-template-columns: minmax(500px, 1fr) minmax(520px, 1.05fr);
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+  .hero-left {
+  padding: 8rem 3rem 6rem 6vw;
+  max-width: 760px;
+  position: relative;
+  z-index: 2;
+}
+  .hero-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--dusty-rose);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    font-family: var(--sans);
+    font-weight: 400;
+  }
+ .hero-title {
+  font-family: var(--display);
+  font-size: clamp(3.8rem, 5.8vw, 6.2rem);
+  line-height: 1.05;
+  color: var(--text-dark);
+  font-weight: 400;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+  max-width: none;
+  white-space: nowrap;
+}
+  .hero-subtitle {
+  font-family: var(--serif);
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  color: var(--text-mid);
+  font-weight: 300;
+  font-style: italic;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+  .hero-punchline {
+  font-family: var(--sans);
+  font-size: 1rem;
+  color: var(--text-light);
+  margin-bottom: 3rem;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--dusty-rose);
+  line-height: 1.7;
+  max-width: 32rem;
+}
+  .btn-read {
+    display: inline-block;
+    padding: 0.9rem 2.5rem;
+    background: var(--text-dark);
+    color: var(--warm-white);
+    text-decoration: none;
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    transition: background 0.25s, transform 0.2s;
+    font-weight: 400;
+  }
+  .btn-read:hover { background: var(--text-mid); transform: translateY(-1px); }
+
+  .hero-right {
+   position: relative;
+  height: 100vh;
+  padding-top: 5.8rem;      /* 避開右上導航列 */
+  padding-right: 2.5rem;
+  padding-left: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  }
+  .hero-image-placeholder {
+     width: 100%;
+  max-width: 1040px;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  border: none;
+  min-height: unset;
+  }
+  .hero-image-placeholder img,
+  .img-placeholder img,
+  .social-card img,
+  .sticky-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .hero-image-placeholder img {
+    position: absolute;
+    inset: 0;
+  }
+  .hero-image-placeholder .placeholder-icon,
+  .hero-image-placeholder .placeholder-label {
+    position: relative;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .hero-image-placeholder:has(img) .placeholder-icon,
+  .hero-image-placeholder:has(img) .placeholder-label {
+    display: none;
+  }
+  .placeholder-icon {
+    width: 80px;
+    height: 80px;
+    border: 1px solid var(--dusty-rose);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .placeholder-icon svg { opacity: 0.4; }
+  .placeholder-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: var(--dusty-rose);
+    font-family: var(--sans);
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    animation: bounce 2s ease-in-out infinite;
+  }
+  .hero-scroll span {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--text-faint);
+    font-family: var(--sans);
+  }
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--dusty-rose), transparent);
+    animation: grow 2s ease-in-out infinite;
+  }
+  @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+  @keyframes grow { 0%,100%{opacity:0.4;height:30px} 50%{opacity:1;height:50px} }
+
+  @media (max-width: 1024px) {
+    #hero {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      min-height: auto;
+      padding-top: 5rem;
+      overflow: visible;
+    }
+
+    .hero-left {
+      width: 100%;
+      max-width: 100%;
+      padding: 2.75rem 1.5rem 1.5rem;
+    }
+
+    .hero-title {
+      white-space: normal;
+      max-width: min(100%, 12ch);
+      font-size: clamp(2.8rem, 11vw, 4.2rem);
+      line-height: 1.1;
+      overflow-wrap: break-word;
+      word-break: keep-all;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.05rem, 4.2vw, 1.35rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-punchline {
+      max-width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    .hero-right {
+      height: auto;
+      padding: 0 1.25rem 3rem;
+      transform: none !important;
+    }
+
+    .hero-image-placeholder {
+      width: 100%;
+      max-width: none;
+      aspect-ratio: 16 / 9;
+    }
+
+    .hero-scroll { display: none; }
+  }
+
+  @media (max-width: 420px) {
+    .hero-title {
+      font-size: clamp(2.35rem, 12vw, 3.2rem);
+      max-width: 9.5ch;
+    }
+
+    .hero-left {
+      padding: 2.25rem 1.2rem 1.35rem;
+    }
+  }
+
+  #chapter-nav {
+    background: var(--ivory);
+    border-top: 1px solid var(--parchment);
+    border-bottom: 1px solid var(--parchment);
+    padding: 2rem 0;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+  .chapter-nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    gap: 0;
+    align-items: stretch;
+  }
+  .ch-nav-item {
+    flex: 1;
+    min-width: 140px;
+    padding: 1rem 1.5rem;
+    border-right: 1px solid var(--parchment);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    text-decoration: none;
+    transition: background 0.2s, color 0.25s;
+    cursor: pointer;
+  }
+  .ch-nav-item:last-child { border-right: none; }
+  .ch-nav-item:hover { background: var(--cream); }
+  .ch-nav-item.active {
+    background: rgba(250,248,245,0.66);
+    box-shadow: inset 0 -1px 0 var(--dusty-rose);
+  }
+  .ch-nav-item.active .ch-title { color: var(--text-dark); }
+  .ch-nav-item.active .ch-num { color: var(--rose-accent); }
+  .ch-num {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--dusty-rose);
+    font-family: var(--sans);
+  }
+  .ch-title {
+    font-family: var(--serif);
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    line-height: 1.4;
+    font-weight: 400;
+  }
+
+  section[id],
+  .section-breaker,
+  .article-section,
+  .sticky-split,
+  #game-entry,
+  #game-placeholder,
+  #dispute-game,
+  .mini-interaction,
+
+  /* ── DISPUTE GAME ── */
+  #dispute-game {
+    background: linear-gradient(180deg, var(--ivory) 0%, var(--cream) 100%);
+  }
+  .dispute-game-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .dispute-game-bridge {
+    max-width: 760px;
+    margin: 0 auto 2.5rem;
+    padding: 1.4rem 1.8rem;
+    border-left: 2px solid var(--dusty-rose);
+    background: rgba(250,248,245,0.72);
+  }
+  .dispute-game-bridge p {
+    color: var(--text-mid);
+    font-family: var(--serif);
+    font-size: 1.08rem;
+    line-height: 1.75;
+    font-style: italic;
+  }
+  .dispute-game-shell {
+    background: var(--warm-white);
+    border: 1px solid var(--parchment);
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 14px 32px rgba(44,37,32,0.045);
+  }
+  .dispute-game-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(240px, 0.75fr);
+    gap: 1.5rem;
+    padding: 2.5rem;
+    background: rgba(232,213,203,0.22);
+    border-bottom: 1px solid var(--parchment);
+    align-items: center;
+  }
+  .dispute-kicker,
+  .dispute-step-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--dusty-rose);
+    font-family: var(--sans);
+    margin-bottom: 0.7rem;
+  }
+  .dispute-hero-copy h3,
+  .dispute-section-head h4,
+  .dispute-scenario-copy h4,
+  .dispute-question-top h4,
+  .dispute-result-card h4,
+  .dispute-guide-head h4 {
+    font-family: var(--display);
+    color: var(--text-dark);
+    font-weight: 400;
+    line-height: 1.25;
+  }
+  .dispute-hero-copy h3 {
+    font-size: clamp(1.8rem, 3.4vw, 2.75rem);
+    margin-bottom: 0.85rem;
+  }
+  .dispute-hero-copy p:not(.dispute-kicker),
+  .dispute-section-head p,
+  .dispute-scenario-copy p,
+  .dispute-result-card p,
+  .dispute-role-card p {
+    color: var(--text-mid);
+    font-size: 0.92rem;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+  .dispute-image-frame {
+    position: relative;
+    min-height: 210px;
+    border: 1px solid var(--parchment);
+    background: var(--ivory);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .dispute-image-frame.small {
+    min-height: 110px;
+    width: 190px;
+    flex: 0 0 190px;
+  }
+  .dispute-image-frame img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .dispute-image-frame img:not([src]),
+  .dispute-image-frame img[src=""],
+  .dispute-image-frame img.is-missing {
+    display: none;
+  }
+  .dispute-img-placeholder {
+    color: var(--text-faint);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-align: center;
+    padding: 1rem;
+    font-family: var(--sans);
+  }
+  .dispute-game-card { padding: 2.5rem; }
+  .dispute-screen { display: none; }
+  .dispute-screen.is-active {
+    display: block;
+    animation: disputeFade 0.35s ease both;
+  }
+  @keyframes disputeFade {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .dispute-section-head {
+    max-width: 680px;
+    margin-bottom: 2rem;
+  }
+  .dispute-section-head h4,
+  .dispute-scenario-copy h4,
+  .dispute-question-top h4,
+  .dispute-result-card h4,
+  .dispute-guide-head h4 {
+    font-size: clamp(1.35rem, 2.4vw, 2rem);
+    margin-bottom: 0.75rem;
+  }
+  .dispute-role-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  .dispute-role-card,
+  .dispute-option-btn {
+    appearance: none;
+    border: 1px solid var(--parchment);
+    background: rgba(250,248,245,0.8);
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    font-family: var(--sans);
+  }
+  .dispute-role-card {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 16px;
+    align-items: center;
+  }
+  .dispute-role-card:hover,
+  .dispute-option-btn:hover {
+    transform: translateY(-2px);
+    border-color: var(--dusty-rose);
+    background: var(--warm-white);
+  }
+  .dispute-role-image {
+    position: relative;
+    min-height: 120px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--ivory);
+    border: 1px solid var(--parchment);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .dispute-role-image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .dispute-role-image img.is-missing { display: none; }
+  .dispute-role-card span {
+    display: block;
+    color: var(--text-dark);
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    margin-bottom: 0.35rem;
+  }
+  .dispute-scenario-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 330px;
+    gap: 2rem;
+    align-items: center;
+  }
+  .dispute-primary-btn,
+  .dispute-ghost-btn {
+    appearance: none;
+    cursor: pointer;
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    padding: 0.82rem 1.8rem;
+    border-radius: 999px;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+  }
+  .dispute-primary-btn {
+    border: 1px solid var(--text-dark);
+    background: var(--text-dark);
+    color: var(--warm-white);
+    margin-top: 1.4rem;
+  }
+  .dispute-primary-btn:hover { background: var(--text-mid); }
+  .dispute-primary-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+  .dispute-ghost-btn {
+    border: 1px solid var(--parchment);
+    background: transparent;
+    color: var(--text-mid);
+  }
+  .dispute-ghost-btn:hover {
+    border-color: var(--dusty-rose);
+    color: var(--text-dark);
+    background: var(--cream);
+  }
+  .dispute-question-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-bottom: 1.6rem;
+  }
+  .dispute-main-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 1.5rem;
+    align-items: start;
+  }
+  #dispute-question-screen .dispute-question-area {
+    min-height: 420px;
+  }
+  .dispute-option-list {
+    display: grid;
+    gap: 0.85rem;
+  }
+  .dispute-option-btn {
+    border-radius: 14px;
+    padding: 1rem 1.1rem;
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    gap: 0.9rem;
+    align-items: start;
+  }
+  .dispute-option-btn.is-selected {
+    border-color: var(--rose-accent);
+    background: rgba(232,213,203,0.28);
+  }
+  .dispute-option-btn.is-locked:not(.is-selected) {
+    opacity: 0.66;
+  }
+  .dispute-option-letter {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid var(--dusty-rose);
+    color: var(--dusty-rose);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    flex-shrink: 0;
+  }
+  .dispute-option-text {
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    line-height: 1.65;
+    font-weight: 300;
+  }
+  .dispute-feedback {
+    min-height: 86px;
+    margin-top: 1rem;
+    padding: 1rem 1.15rem;
+    border: 1px solid var(--parchment);
+    background: var(--cream);
+    border-radius: 14px;
+  }
+  .dispute-feedback p {
+    color: var(--text-mid);
+    font-size: 0.88rem;
+    line-height: 1.75;
+    font-family: var(--serif);
+    font-style: italic;
+  }
+  .dispute-score-panel {
+    background: rgba(250,248,245,0.86);
+    border: 1px solid var(--parchment);
+    border-radius: 16px;
+    padding: 1.2rem;
+  }
+  .dispute-score-title {
+    color: var(--text-dark);
+    font-family: var(--serif);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .dispute-score-item { margin-bottom: 1rem; }
+  .dispute-score-item:last-child { margin-bottom: 0; }
+  .dispute-score-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-bottom: 0.35rem;
+  }
+  .dispute-score-track {
+    height: 6px;
+    background: var(--ivory);
+    border: 1px solid var(--parchment);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .dispute-score-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--dusty-rose), var(--rose-accent));
+    border-radius: 999px;
+    transition: width 0.35s ease;
+  }
+  .dispute-result-card,
+  .dispute-guide-card,
+  .dispute-source-card {
+    border: 1px solid var(--parchment);
+    background: rgba(250,248,245,0.82);
+    border-radius: 18px;
+    padding: 1.6rem;
+    margin-bottom: 1.2rem;
+  }
+  .dispute-result-card { border-color: var(--dusty-rose); }
+  .dispute-result-card p:not(.dispute-step-label) {
+    color: var(--text-mid);
+    font-size: 0.95rem;
+    line-height: 1.85;
+    font-weight: 300;
+  }
+  .dispute-score-final { margin-bottom: 1.2rem; }
+  .dispute-guide-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.25rem;
+    align-items: center;
+    margin-bottom: 1.2rem;
+  }
+  .dispute-guide-list {
+    display: grid;
+    gap: 0.8rem;
+  }
+  .dispute-guide-step {
+    display: grid;
+    grid-template-columns: 38px 1fr;
+    gap: 0.8rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--parchment);
+  }
+  .dispute-guide-num {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--dusty-rose);
+    color: var(--dusty-rose);
+    font-size: 0.72rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .dispute-guide-step strong {
+    display: block;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+  }
+  .dispute-guide-step p,
+  .dispute-source-card li {
+    color: var(--text-mid);
+    font-size: 0.85rem;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+  .dispute-source-card ul {
+    padding-left: 1.1rem;
+    display: grid;
+    gap: 0.35rem;
+  }
+  .dispute-actions {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  @media (max-width: 820px) {
+    .dispute-game-hero,
+    .dispute-role-grid,
+    .dispute-scenario-layout,
+    .dispute-main-grid {
+      grid-template-columns: 1fr;
+    }
+    .dispute-game-card,
+    .dispute-game-hero {
+      padding: 1.35rem;
+    }
+    .dispute-role-card {
+      grid-template-columns: 92px 1fr;
+    }
+    .dispute-role-image { min-height: 92px; }
+    .dispute-question-top,
+    .dispute-guide-head {
+      flex-direction: column;
+    }
+    #dispute-question-screen .dispute-main-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: stretch;
+    }
+    #dispute-question-screen .dispute-score-panel {
+      order: -1;
+      margin-bottom: 0.35rem;
+      padding: 0.95rem;
+      border-radius: 14px;
+    }
+    #dispute-question-screen .dispute-question-area {
+      order: 1;
+      min-height: auto;
+    }
+    #dispute-question-screen .dispute-score-title {
+      margin-bottom: 0.65rem;
+      font-size: 0.95rem;
+    }
+    #dispute-question-screen .dispute-score-item { margin-bottom: 0.62rem; }
+    #dispute-question-screen .dispute-score-row {
+      margin-bottom: 0.22rem;
+      font-size: 0.72rem;
+    }
+    #dispute-question-screen .dispute-score-track { height: 5px; }
+    .dispute-image-frame.small {
+      width: 100%;
+      flex-basis: auto;
+    }
+  }
+  @media (max-width: 520px) {
+    #dispute-game { padding-left: 1rem; padding-right: 1rem; }
+    .dispute-game-shell { border-radius: 16px; }
+    .dispute-role-card,
+    .dispute-option-btn {
+      grid-template-columns: 1fr;
+    }
+    .dispute-option-letter { margin-bottom: 0.2rem; }
+    .dispute-actions .dispute-primary-btn,
+    .dispute-actions .dispute-ghost-btn {
+      width: 100%;
+    }
+  }
+
+  #ending {
+    scroll-margin-top: var(--section-offset);
+  }
+
+  .article-section {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+  }
+  .section-header { margin-bottom: 3.5rem; }
+  .section-num {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    color: var(--dusty-rose);
+    text-transform: uppercase;
+    font-family: var(--sans);
+    display: block;
+    margin-bottom: 1rem;
+  }
+  .section-title {
+    font-family: var(--display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    color: var(--text-dark);
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+  .section-intro {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    color: var(--text-mid);
+    font-style: italic;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .article-body p {
+    margin-bottom: 1.75rem;
+    color: var(--text-dark);
+    font-family: var(--sans);
+    font-size: 1rem;
+    line-height: 2;
+    font-weight: 300;
+  }
+  .article-body > p.dropcap::first-letter {
+    font-family: var(--display);
+    font-size: 3.5em;
+    float: left;
+    line-height: 0.8;
+    margin: 0.08em 0.08em 0 0;
+    color: var(--dusty-rose);
+  }
+
+  .pull-quote {
+    margin: 3rem 0;
+    padding: 2.5rem 3rem;
+    border-left: 3px solid var(--dusty-rose);
+    background: var(--ivory);
+  }
+  .pull-quote p {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    font-style: italic;
+    line-height: 1.6;
+    font-weight: 400;
+    margin: 0;
+  }
+  .pull-quote cite {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--text-light);
+    font-family: var(--sans);
+    font-style: normal;
+  }
+
+  .img-placeholder {
+    width: 100%;
+    background: var(--ivory);
+    border: 1px solid var(--parchment);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 3rem 2rem;
+    margin: 2.5rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .img-placeholder img {
+    position: absolute;
+    inset: 0;
+  }
+  .img-placeholder:has(img) {
+    padding: 0;
+  }
+  .img-placeholder:has(img) .ph-icon,
+  .img-placeholder:has(img) .ph-text {
+    display: none;
+  }
+  .img-placeholder .ph-icon {
+    width: 48px; height: 48px;
+    border: 1px solid var(--nude);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .img-placeholder .ph-text {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: var(--text-faint);
+    font-family: var(--sans);
+    text-align: center;
+  }
+  .img-placeholder-tall { height: 320px; }
+  .img-placeholder-short { width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: unset;
+  position: relative;
+  overflow: hidden; }
+
+  .data-visual-row {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    background: var(--cream);
+    border-top: 1px solid var(--parchment);
+    border-bottom: 1px solid var(--parchment);
+  }
+  .stat-card {
+    padding: 2.5rem 2rem;
+    background: var(--warm-white);
+    border: 1px solid var(--parchment);
+  }
+  .stat-num {
+    font-family: var(--display);
+    font-size: 3.5rem;
+    color: var(--text-dark);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+  }
+  .stat-unit {
+    font-family: var(--sans);
+    font-size: 1rem;
+    color: var(--dusty-rose);
+    margin-left: 0.25rem;
+  }
+  .stat-label {
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    color: var(--text-light);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+  @media (max-width: 768px) {
+    .data-visual-row { grid-template-columns: 1fr; }
+  }
+
+  .social-carousel-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 2rem 1rem;
+    position: relative;
+  }
+  .social-carousel {
+    position: relative;
+    overflow: hidden;
+    padding: 1rem 0;
+    touch-action: pan-y;
+  }
+  .carousel-track {
+    display: flex;
+    will-change: transform;
+    transition: transform 0.55s cubic-bezier(.22,.61,.36,1);
+  }
+  .social-slide {
+    flex: 0 0 62%;
+    padding: 0 0.8rem;
+    transform: scale(0.9);
+    opacity: 0.58;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+  .social-slide.is-active {
+    transform: scale(1);
+    opacity: 1;
+  }
+  .social-card {
+    aspect-ratio: 1;
+    background: var(--ivory);
+    border: 1px solid var(--parchment);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    transition: transform 0.3s ease;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+  .social-card img {
+    position: absolute;
+    inset: 0;
+  }
+  .social-card:has(img) {
+    padding: 0;
+  }
+  .social-card:has(img) .placeholder-icon,
+  .social-card:has(img) .sc-label {
+    display: none;
+  }
+  .social-card .sc-label {
+    font-size: 0.65rem;
+    color: var(--text-faint);
+    letter-spacing: 0.1em;
+    font-family: var(--sans);
+    text-align: center;
+  }
+  .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--parchment);
+    background: rgba(250,248,245,0.86);
+    backdrop-filter: blur(8px);
+    color: var(--text-mid);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    z-index: 2;
+  }
+  .carousel-arrow:hover {
+    border-color: var(--dusty-rose);
+    color: var(--text-dark);
+  }
+  .carousel-arrow.prev { left: 0.5rem; }
+  .carousel-arrow.next { right: 0.5rem; }
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  .carousel-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    border: none;
+    background: var(--parchment);
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .carousel-dot.active {
+    background: var(--dusty-rose);
+    transform: scale(1.15);
+  }
+  @media (min-width: 900px) {
+    .social-slide { flex-basis: 38%; }
+  }
+  @media (max-width: 768px) {
+    .social-carousel-wrap { padding: 2rem 1rem 0.5rem; }
+    .social-slide { flex-basis: 78%; }
+    .carousel-arrow { width: 40px; height: 40px; }
+  }
+
+  .sticky-split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: 2.5rem;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 6rem 2rem 2rem;
+    align-items: start;
+  }
+  .sticky-right {
+    position: sticky;
+    top: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .sticky-visual {
+    background: var(--ivory);
+    border: 1px solid var(--parchment);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: center;
+    min-height: 260px;
+    position: relative;
+    overflow: hidden;
+  }
+  .sticky-visual img {
+    position: absolute;
+    inset: 0;
+  }
+  .sticky-visual:has(img) {
+    padding: 0;
+  }
+  .sticky-visual:has(img) .ph-icon,
+  .sticky-visual:has(img) .sv-label {
+    display: none;
+  }
+  .sticky-visual .sv-label {
+    font-size: 0.65rem;
+    color: var(--text-faint);
+    letter-spacing: 0.12em;
+    font-family: var(--sans);
+    text-align: center;
+  }
+
+  .chapter-chart-block {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 1rem 2rem 4rem;
+  }
+  .certificate-growth-visual {
+    background: linear-gradient(180deg, rgba(250,248,245,0.98) 0%, rgba(237,232,223,0.96) 100%);
+    border: 1px solid var(--parchment);
+    padding: 1rem;
+    box-shadow: 0 10px 26px rgba(44,37,32,0.04);
+  }
+  .certificate-growth-visual .chart-container {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    aspect-ratio: 4 / 3;
+    background-color: var(--ivory);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(44, 37, 32, 0.05);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(212, 196, 176, 0.78);
+  }
+  .certificate-growth-visual .chart-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .certificate-growth-visual .chart-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    line-height: 1.25;
+    word-break: keep-all;
+  }
+  .certificate-growth-visual .chart-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    letter-spacing: 0.1em;
+    font-family: var(--sans);
+    line-height: 1.55;
+    word-break: keep-all;
+  }
+  .certificate-growth-visual .cards-wrapper {
+    display: flex;
+    gap: 1.5rem;
+    flex: 1;
+    align-items: stretch;
+  }
+  .certificate-growth-visual .card-container {
+    flex: 1;
+    perspective: 1000px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    display: block;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+  }
+  .certificate-growth-visual .card-container:focus-visible {
+    outline: 1px solid var(--dusty-rose);
+    outline-offset: 3px;
+  }
+  .certificate-growth-visual .card {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    position: relative;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+    display: block;
+  }
+  .certificate-growth-visual .card-container.is-flipped .card {
+    transform: rotateY(180deg);
+  }
+  .certificate-growth-visual .card-face {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border: 1px solid var(--nude);
+  }
+  .certificate-growth-visual .card-front {
+    background-color: var(--cream);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .certificate-growth-visual .front-badge {
+    background-color: var(--blush-mist);
+    color: var(--text-dark);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    font-family: var(--sans);
+    display: inline-block;
+  }
+  .certificate-growth-visual .front-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    line-height: 1.15;
+    word-break: keep-all;
+  }
+  .certificate-growth-visual .front-subtitle {
+    font-size: 0.85rem;
+    color: var(--text-mid);
+    line-height: 1.5;
+    font-family: var(--sans);
+    font-weight: 300;
+    word-break: keep-all;
+  }
+  .certificate-growth-visual .click-hint {
+    margin-top: 2rem;
+    font-size: 0.75rem;
+    color: var(--dusty-rose);
+    letter-spacing: 0.15em;
+    animation: certHintPulse 2s infinite;
+    font-family: var(--sans);
+    text-transform: uppercase;
+    display: inline-block;
+  }
+  @keyframes certHintPulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+  }
+  .certificate-growth-visual .card-back {
+    background-color: var(--warm-white);
+    transform: rotateY(180deg);
+    justify-content: flex-start;
+    border-color: var(--dusty-rose);
+  }
+  .certificate-growth-visual .back-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    padding-bottom: 0.8rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px dashed var(--nude);
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.35;
+    word-break: keep-all;
+  }
+  .certificate-growth-visual .info-group {
+    margin-bottom: 1.2rem;
+  }
+  .certificate-growth-visual .info-group:last-child { margin-bottom: 0; }
+  .certificate-growth-visual .info-label {
+    font-size: 0.7rem;
+    color: var(--dusty-rose);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+    font-family: var(--sans);
+    word-break: keep-all;
+  }
+  .certificate-growth-visual .info-text {
+    font-size: 0.85rem;
+    color: var(--text-mid);
+    line-height: 1.5;
+    font-weight: 300;
+    font-family: var(--sans);
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+  .certificate-growth-visual .chart-note {
+    margin-top: 1rem;
+    padding-top: 0.95rem;
+    border-top: 1px solid rgba(201,169,154,0.22);
+  }
+  .certificate-growth-visual .chart-note p {
+    font-size: 0.8rem;
+    line-height: 1.75;
+    color: var(--text-mid);
+    font-family: var(--sans);
+    font-weight: 300;
+  }
+
+  @media (max-width: 980px) {
+    .sticky-split { grid-template-columns: 1fr; padding-bottom: 1rem; }
+    .sticky-right { position: static; }
+    .chapter-chart-block { padding-top: 0.5rem; }
+    .certificate-growth-visual .chart-container {
+      aspect-ratio: auto;
+      min-height: 80vh;
+      padding: 1.45rem;
+    }
+    .certificate-growth-visual .cards-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(240px, 1fr));
+      gap: 1rem;
+      flex: initial;
+    }
+    .certificate-growth-visual .card-container {
+      min-height: 300px;
+    }
+  }
+  @media (max-width: 720px) {
+    .chapter-chart-block { padding: 0.5rem 1rem 3rem; }
+    .certificate-growth-visual { padding: 0.8rem; }
+    .certificate-growth-visual .chart-container { padding: 1rem; min-height: auto; }
+    .certificate-growth-visual .chart-title { font-size: 1.4rem; }
+    .certificate-growth-visual .cards-wrapper {
+      grid-template-columns: 1fr;
+      display: grid;
+      gap: 0.85rem;
+    }
+    .certificate-growth-visual .card-container { min-height: 300px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .certificate-growth-visual .card,
+    .certificate-growth-visual .click-hint {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+
+  .compare-intro {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 2rem 1rem;
+  }
+  .compare-board {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+  .compare-panel {
+    height: 740px;
+    display: flex;
+    flex-direction: column;
+    background: var(--warm-white);
+    border: 1px solid var(--parchment);
+    overflow: hidden;
+  }
+  .compare-head {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: rgba(250,248,245,0.94);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--parchment);
+    padding: 1.45rem 1.5rem 1.2rem;
+    display: block;
+  }
+  .compare-name {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    color: var(--text-dark);
+    line-height: 1.2;
+  }
+  .compare-tag {
+    margin-top: 0.45rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    color: var(--dusty-rose);
+    font-family: var(--sans);
+  }
+  .compare-scroll {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--parchment) transparent;
+  }
+  .compare-scroll::-webkit-scrollbar { width: 8px; }
+  .compare-scroll::-webkit-scrollbar-thumb { background: var(--parchment); }
+  .compare-intro-copy {
+    font-size: 0.92rem;
+    line-height: 1.85;
+    color: var(--text-mid);
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+  }
+  .milestone-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+  .milestone {
+    background: var(--ivory);
+    border: 1px solid var(--parchment);
+    padding: 1rem 1rem 1rem 1.15rem;
+  }
+  .milestone-kicker {
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    color: var(--dusty-rose);
+    font-family: var(--sans);
+    margin-bottom: 0.45rem;
+  }
+  .milestone-title {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin-bottom: 0.35rem;
+  }
+  .milestone-text {
+    font-size: 0.85rem;
+    line-height: 1.75;
+    color: var(--text-mid);
+    font-weight: 300;
+  }
+  .mini-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+  }
+  .mini-stat {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--parchment);
+  }
+  .mini-stat-label {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    font-family: var(--sans);
+  }
+  .mini-stat-value {
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    font-family: var(--sans);
+    font-weight: 400;
+    text-align: right;
+  }
+  @media (max-width: 900px) {
+    .compare-board { grid-template-columns: 1fr; }
+    .compare-panel { height: auto; max-height: 78vh; }
+  }
+
+  .mini-interaction {
+    background: var(--ivory);
+    border-top: 1px solid var(--parchment);
+    border-bottom: 1px solid var(--parchment);
+    padding: 5rem 2rem;
+  }
+  .mini-interaction-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .mi-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    color: var(--dusty-rose);
+    text-transform: uppercase;
+    font-family: var(--sans);
+    margin-bottom: 1.5rem;
+  }
+  .mi-title {
+    font-family: var(--display);
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+    font-weight: 400;
+  }
+  .mi-desc {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-family: var(--sans);
+    margin-bottom: 3rem;
+    max-width: 480px;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+  .ig-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .ig-card {
+    background: var(--warm-white);
+    border: 1px solid var(--parchment);
+    cursor: pointer;
+    transition: border-color 0.2s, transform 0.2s;
+    overflow: hidden;
+  }
+  .ig-card:hover { border-color: var(--dusty-rose); transform: translateY(-3px); }
+  .ig-card.selected { border-color: var(--rose-accent); box-shadow: 0 0 0 2px var(--blush-mist); }
+  .ig-card-header {
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-bottom: 1px solid var(--parchment);
+  }
+  .ig-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--blush-mist);
+    border: 1.5px solid var(--dusty-rose);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-size: 0.9rem;
+    color: var(--dusty-rose);
+    font-style: italic;
+    flex-shrink: 0;
+  }
+  .ig-name {
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    font-family: var(--sans);
+    font-weight: 400;
+  }
+  .ig-handle {
+    font-size: 0.7rem;
+    color: var(--text-faint);
+    font-family: var(--sans);
+  }
+  .ig-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    padding: 0;
+  }
+  .ig-post {
+    aspect-ratio: 1;
+    background: var(--ivory);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ig-post span {
+    font-size: 0.6rem;
+    color: var(--text-faint);
+    font-family: var(--sans);
+    text-align: center;
+    line-height: 1.4;
+  }
+  .ig-card-footer {
+    padding: 1rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .ig-stat {
+    font-size: 0.7rem;
+    color: var(--text-light);
+    font-family: var(--sans);
+  }
+  .ig-badge {
+    font-size: 0.6rem;
+    padding: 0.2rem 0.5rem;
+    background: var(--blush-mist);
+    color: var(--dusty-rose);
+    font-family: var(--sans);
+    letter-spacing: 0.05em;
+  }
+  .mi-reveal {
+    background: var(--cream);
+    border: 1px solid var(--parchment);
+    padding: 2rem 2.5rem;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mi-reveal p {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--text-faint);
+    font-style: italic;
+    text-align: center;
+    font-weight: 300;
+  }
+
+  /* mini1 game styles */
+  #mini1 { position: relative; }
+  #mini1 .mini1-game-container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    min-height: 680px;
+    background: var(--cream);
+    border: 1px solid var(--parchment);
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(44,37,32,0.05);
+    padding: 2.5rem;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  #mini1 .mini1-screen-hidden { display: none !important; }
+  #mini1 .mini1-fade-in { animation: mini1FadeIn 0.45s ease forwards; }
+  @keyframes mini1FadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  #mini1 .mini1-kicker {
+    display: inline-block;
+    background: var(--blush-mist);
+    color: var(--text-dark);
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    margin-bottom: 1.5rem;
+  }
+  #mini1 .mini1-title,
+  #mini1 .mini1-heading,
+  #mini1 .mini1-result-heading,
+  #mini1 .mini1-profile-name,
+  #mini1 .mini1-chat-partner,
+  #mini1 .mini1-modal-title,
+  #mini1 .mini1-result-subheading {
+    font-family: 'Noto Serif TC', var(--serif);
+  }
+  #mini1 .mini1-start,
+  #mini1 .mini1-selection,
+  #mini1 .mini1-investigate,
+  #mini1 .mini1-chat,
+  #mini1 .mini1-result {
+    min-height: 560px;
+  }
+  #mini1 .mini1-start {
+    text-align: center;
+    padding: 2rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #mini1 .mini1-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.25;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+  #mini1 .mini1-desc {
+    max-width: 34rem;
+    margin: 0 auto 2.5rem;
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: var(--text-mid);
+  }
+  #mini1 .mini1-btn,
+  #mini1 .mini1-btn-ghost {
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--sans);
+    letter-spacing: 0.12em;
+    font-size: 0.78rem;
+    padding: 0.85rem 2rem;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+    border-radius: 10px;
+  }
+  #mini1 .mini1-btn {
+    background: var(--text-dark);
+    color: var(--warm-white);
+  }
+  #mini1 .mini1-btn:hover { background: var(--text-mid); }
+  #mini1 .mini1-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+  #mini1 .mini1-btn-ghost {
+    background: transparent;
+    color: var(--text-dark);
+    border: 1px solid var(--text-dark);
+  }
+  #mini1 .mini1-btn-ghost:hover { background: var(--ivory); }
+  #mini1 .mini1-selection-head,
+  #mini1 .mini1-chat-head,
+  #mini1 .mini1-result-head {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  #mini1 .mini1-heading {
+    font-size: 2rem;
+    line-height: 1.3;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  #mini1 .mini1-subtext {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+  #mini1 .mini1-profiles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+  #mini1 .mini1-profile-card {
+    background: var(--warm-white);
+    border: 1px solid var(--parchment);
+    border-radius: 14px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    cursor: pointer;
+  }
+  #mini1 .mini1-profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px rgba(201,169,154,0.14);
+    border-color: var(--dusty-rose);
+  }
+  #mini1 .mini1-avatar,
+  #mini1 .mini1-investigate-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto 1rem;
+    font-family: 'Noto Serif TC', var(--serif);
+    font-size: 1.45rem;
+    background: var(--blush-mist);
+    color: var(--text-dark);
+    isolation: isolate;
+    flex-shrink: 0;
+  }
+  #mini1 .mini1-avatar img,
+  #mini1 .mini1-investigate-avatar img,
+  #mini1 .mini1-highlight-thumb img,
+  #mini1 .mini1-photo-item img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  #mini1 .mini1-avatar span,
+  #mini1 .mini1-investigate-avatar span,
+  #mini1 .mini1-highlight-thumb span,
+  #mini1 .mini1-photo-item span {
+    position: relative;
+    z-index: 0;
+  }
+  #mini1 .mini1-profile-name {
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+  }
+  #mini1 .mini1-profile-meta {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+  }
+  #mini1 .mini1-profile-link {
+    font-size: 0.82rem;
+    color: var(--dusty-rose);
+    font-weight: 500;
+  }
+  #mini1 .mini1-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  #mini1 .mini1-back-link {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 0.82rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.38rem;
+    padding: 0;
+    line-height: 1;
+  }
+  #mini1 .mini1-back-link:hover { color: var(--text-dark); }
+  #mini1 .mini1-inline-icon {
+    width: 16px;
+    height: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  #mini1 .mini1-inline-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  #mini1 .mini1-clue-counter {
+    font-size: 0.82rem;
+    color: var(--dusty-rose);
+    font-weight: 500;
+  }
+  #mini1 .mini1-investigate-card {
+    background: var(--warm-white);
+    border: 1px solid var(--parchment);
+    border-radius: 14px;
+    padding: 1.5rem;
+    overflow: visible;
+  }
+  #mini1 .mini1-ig-header {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--parchment);
+  }
+  #mini1 .mini1-profile-stats {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.82rem;
+    color: var(--text-dark);
+    flex-wrap: wrap;
+  }
+  #mini1 .mini1-profile-stats > div {
+    min-width: 72px;
+    text-align: center;
+  }
+  #mini1 .mini1-profile-stats strong {
+    display: block;
+    font-size: 1rem;
+    color: var(--text-dark);
+  }
+  #mini1 .mini1-profile-bio,
+  #mini1 .mini1-highlights,
+  #mini1 .mini1-photo-grid {
+    position: relative;
+    border-radius: 10px;
+    overflow: visible;
+  }
+  #mini1 .mini1-profile-bio {
+    padding: 0.75rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.75;
+    color: var(--text-mid);
+    font-size: 0.88rem;
+  }
+  #mini1 .mini1-highlights {
+    display: flex;
+    gap: 1.2rem;
+    padding: 0.65rem 0.4rem;
+    margin: 0 -0.4rem 1.5rem;
+    align-items: flex-start;
+  }
+  #mini1 .mini1-highlight-item {
+    min-width: 58px;
+    text-align: center;
+    flex: 0 0 auto;
+  }
+  #mini1 .mini1-highlight-thumb {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid var(--dusty-rose);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto 0.4rem;
+    background: rgba(212,196,176,0.15);
+    font-size: 1rem;
+    color: rgba(44,37,32,0.38);
+    isolation: isolate;
+  }
+  #mini1 .mini1-highlight-label {
+    font-size: 0.68rem;
+    color: var(--text-mid);
+    line-height: 1.35;
+    display: block;
+    white-space: nowrap;
+  }
+  #mini1 .mini1-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+  }
+  #mini1 .mini1-photo-item {
+    aspect-ratio: 1;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.92);
+    font-size: 0.72rem;
+    text-align: center;
+    padding: 0.5rem;
+    letter-spacing: 0.06em;
+    isolation: isolate;
+  }
+  #mini1 .mini1-photo-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(44,37,32,0.18);
+    z-index: 1;
+  }
+  #mini1 .mini1-photo-item span {
+    position: relative;
+    z-index: 2;
+    line-height: 1.35;
+    word-break: break-word;
+  }
+  #mini1 .mini1-clue {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    z-index: 0;
+    isolation: isolate;
+  }
+  #mini1 .mini1-clue::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: inherit;
+    box-shadow: 0 0 10px 4px rgba(201,169,154,0.8);
+    animation: mini1GlowPulse 1.5s infinite alternate;
+    pointer-events: none;
+    z-index: 3;
+  }
+  #mini1 .mini1-clue.mini1-investigated::after { display: none; }
+  #mini1 .mini1-clue.mini1-investigated {
+    opacity: 0.72;
+    transform: scale(0.985);
+  }
+  @keyframes mini1GlowPulse {
+    0% { box-shadow: 0 0 5px 2px rgba(201,169,154,0.4); }
+    100% { box-shadow: 0 0 15px 6px rgba(201,169,154,0.9); }
+  }
+  #mini1 .mini1-investigate-footer {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  #mini1 .mini1-investigate-note {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+  }
+  #mini1 .mini1-chat-box {
+    background: var(--warm-white);
+    border: 1px solid var(--parchment);
+    border-radius: 14px;
+    height: 370px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  #mini1 .mini1-chat-header {
+    padding: 1rem;
+    border-bottom: 1px solid var(--parchment);
+    text-align: center;
+    font-weight: 500;
+  }
+  #mini1 .mini1-chat-messages {
+    flex: 1;
+    padding: 1.5rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  #mini1 .mini1-bubble {
+    max-width: 76%;
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+  #mini1 .mini1-bubble-me {
+    background: var(--dusty-rose);
+    color: var(--warm-white);
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+  }
+  #mini1 .mini1-bubble-them {
+    background: var(--ivory);
+    color: var(--text-dark);
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+  }
+  #mini1 .mini1-typing {
+    display: inline-flex;
+    gap: 4px;
+    padding: 0.55rem 1rem;
+    background: var(--ivory);
+    border-radius: 12px;
+    width: fit-content;
+  }
+  #mini1 .mini1-typing-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--text-light);
+    animation: mini1Blink 1.4s infinite both;
+  }
+  #mini1 .mini1-typing-dot:nth-child(2) { animation-delay: 0.2s; }
+  #mini1 .mini1-typing-dot:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes mini1Blink { 0%,80%,100% { opacity: 0.2; } 40% { opacity: 1; } }
+  #mini1 .mini1-chat-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    visibility: hidden;
+  }
+  #mini1 .mini1-result-card {
+    background: var(--warm-white);
+    border: 1px solid var(--dusty-rose);
+    border-radius: 16px;
+    padding: 3rem 2rem 2rem;
+    max-width: 760px;
+    margin: 3rem auto 0;
+    position: relative;
+    box-shadow: 0 10px 24px rgba(44,37,32,0.06);
+  }
+  #mini1 .mini1-result-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--blush-mist);
+    border: 4px solid var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    color: var(--text-dark);
+  }
+  #mini1 .mini1-result-subheading {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+    font-weight: 600;
+  }
+  #mini1 .mini1-result-desc {
+    color: var(--text-mid);
+    line-height: 1.85;
+    margin-bottom: 1.5rem;
+  }
+  #mini1 .mini1-result-quote {
+    background: rgba(250,248,245,0.88);
+    border-left: 4px solid var(--dusty-rose);
+    padding: 1rem 1.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-mid);
+    font-style: italic;
+    line-height: 1.8;
+  }
+  #mini1 .mini1-result-tips-wrap {
+    border-top: 1px solid var(--parchment);
+    padding-top: 1rem;
+    text-align: left;
+  }
+  #mini1 .mini1-result-tips-title {
+    color: var(--dusty-rose);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    font-size: 0.92rem;
+  }
+  #mini1 .mini1-result-tips {
+    color: var(--text-light);
+    padding-left: 1.2rem;
+    display: grid;
+    gap: 0.6rem;
+    font-size: 0.88rem;
+    line-height: 1.75;
+  }
+  #mini1 .mini1-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(44,37,32,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    z-index: 20;
+  }
+  #mini1 .mini1-modal-content {
+    max-width: 420px;
+    background: var(--warm-white);
+    border: 1px solid var(--dusty-rose);
+    border-radius: 14px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+  #mini1 .mini1-modal-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--blush-mist);
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+  }
+  #mini1 .mini1-modal-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  #mini1 .mini1-modal-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    font-weight: 600;
+  }
+  #mini1 .mini1-modal-text {
+    font-size: 0.9rem;
+    color: var(--text-mid);
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+  }
+  @media (max-width: 900px) {
+    #mini1 .mini1-game-container { padding: 2rem 1.5rem; }
+    #mini1 .mini1-profiles-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 720px) {
+    #mini1 { padding-left: 1rem; padding-right: 1rem; }
+    #mini1 .mini1-game-container {
+      min-height: auto;
+      padding: 1.5rem 1rem;
+      border-radius: 12px;
+    }
+    #mini1 .mini1-ig-header {
+      flex-direction: column;
+      text-align: center;
+    }
+    #mini1 .mini1-profile-stats {
+      justify-content: center;
+    }
+    #mini1 .mini1-highlights {
+      overflow-x: auto;
+      padding-bottom: 0.8rem;
+    }
+    #mini1 .mini1-chat-actions {
+      flex-direction: column;
+    }
+    #mini1 .mini1-chat-actions .mini1-btn,
+    #mini1 .mini1-chat-actions .mini1-btn-ghost {
+      width: 100%;
+    }
+  }
+  @media (max-width: 768px) {
+    .ig-cards { grid-template-columns: 1fr; }
+  }
+
+  #game-entry {
+    background: var(--text-dark);
+    color: var(--warm-white);
+    text-align: center;
+    padding: 8rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  #game-entry::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 100%, rgba(180,144,127,0.15) 0%, transparent 70%);
+  }
+  .ge-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    color: var(--dusty-rose);
+    text-transform: uppercase;
+    font-family: var(--sans);
+    margin-bottom: 2rem;
+    display: block;
+  }
+  .ge-title {
+    font-family: var(--display);
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    color: var(--warm-white);
+    font-weight: 400;
+    margin-bottom: 1.25rem;
+    font-style: italic;
+    position: relative;
+  }
+  .ge-sub {
+    font-size: 0.9rem;
+    color: rgba(250,248,245,0.55);
+    font-family: var(--sans);
+    margin-bottom: 3.5rem;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+  .btn-game {
+    display: inline-block;
+    padding: 1rem 3rem;
+    border: 1.5px solid var(--dusty-rose);
+    color: var(--warm-white);
+    background: transparent;
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition: background 0.25s, color 0.25s;
+    text-decoration: none;
+  }
+  .btn-game:hover { background: var(--dusty-rose); color: var(--warm-white); }
+  .ge-illustration {
+    width: 140px; height: 140px;
+    margin: 0 auto 2.5rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,169,154,0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .ge-illustration-inner {
+    width: 80px; height: 80px;
+    background: rgba(201,169,154,0.15);
+    border: 1px solid rgba(201,169,154,0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ge-dots {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    justify-content: center;
+  }
+  .ge-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--dusty-rose);
+    opacity: 0.4;
+    animation: pulse 1.8s ease-in-out infinite;
+  }
+  .ge-dot:nth-child(2) { animation-delay: 0.3s; }
+  .ge-dot:nth-child(3) { animation-delay: 0.6s; }
+  @keyframes pulse { 0%,100%{opacity:0.4;transform:scale(1)} 50%{opacity:1;transform:scale(1.3)} }
+
+  #game-placeholder {
+    background: var(--cream);
+    border-top: 3px solid var(--dusty-rose);
+    padding: 4rem 2rem;
+  }
+  .game-ui {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .game-ui-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--parchment);
+  }
+  .game-ui-title {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: var(--text-light);
+    font-weight: 400;
+  }
+  .game-ui-status {
+    font-size: 0.7rem;
+    color: var(--dusty-rose);
+    font-family: var(--sans);
+    padding: 0.25rem 0.75rem;
+    border: 1px solid var(--dusty-rose);
+    letter-spacing: 0.1em;
+  }
+  .game-layout {
+    display: grid;
+    grid-template-columns: 220px 1fr 200px;
+    grid-template-rows: auto 80px;
+    gap: 1rem;
+    min-height: 520px;
+  }
+  .game-toolbar {
+    background: var(--ivory);
+    border: 1px solid var(--parchment);
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    grid-row: 1;
+    grid-column: 1;
+  }
+  .gt-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--text-faint);
+    font-family: var(--sans);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+  .gt-tool {
+    padding: 0.6rem 1rem;
+    background: var(--warm-white);
+    border: 1px solid var(--parchment);
+    font-size: 0.8rem;
+    color: var(--text-mid);
+    font-family: var(--sans);
+    font-weight: 300;
+    cursor: default;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .gt-tool .tool-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--blush-mist);
+    border: 1px solid var(--dusty-rose);
+    flex-shrink: 0;
+  }
+  .game-canvas {
+    background: var(--warm-white);
+    border: 1px solid var(--parchment);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-row: 1;
+    grid-column: 2;
+    gap: 1.5rem;
+    position: relative;
+    min-height: 420px;
+  }
+  .nail-hand {
+    width: 180px;
+    display: flex;
+    gap: 8px;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 1rem;
+  }
+  .nail-finger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .nail-bed {
+    background: var(--blush-mist);
+    border: 1px solid var(--dusty-rose);
+    border-radius: 40% 40% 10% 10% / 50% 50% 10% 10%;
+    position: relative;
+    overflow: hidden;
+  }
+  .nail-finger:nth-child(1) .nail-bed { width: 22px; height: 26px; }
+  .nail-finger:nth-child(2) .nail-bed { width: 26px; height: 32px; }
+  .nail-finger:nth-child(3) .nail-bed { width: 28px; height: 35px; }
+  .nail-finger:nth-child(4) .nail-bed { width: 25px; height: 31px; }
+  .nail-finger:nth-child(5) .nail-bed { width: 19px; height: 22px; }
+  .finger-body {
+    background: var(--nude);
+    border: 1px solid var(--parchment);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+  }
+  .nail-finger:nth-child(1) .finger-body { width: 20px; height: 36px; }
+  .nail-finger:nth-child(2) .finger-body { width: 24px; height: 50px; }
+  .nail-finger:nth-child(3) .finger-body { width: 26px; height: 56px; }
+  .nail-finger:nth-child(4) .finger-body { width: 23px; height: 48px; }
+  .nail-finger:nth-child(5) .finger-body { width: 17px; height: 32px; }
+  .canvas-ph-label {
+    font-size: 0.7rem;
+    color: var(--text-faint);
+    letter-spacing: 0.12em;
+    font-family: var(--sans);
+    text-align: center;
+  }
+  .customer-card-area {
+    position: absolute;
+    top: 1rem; left: 1rem;
+    background: var(--ivory);
+    border: 1px solid var(--parchment);
+    padding: 0.75rem 1rem;
+    max-width: 180px;
+  }
+  .cca-label { font-size: 0.6rem; color: var(--dusty-rose); letter-spacing: 0.1em; font-family: var(--sans); margin-bottom: 0.25rem; }
+  .cca-text { font-size: 0.75rem; color: var(--text-mid); font-family: var(--sans); line-height: 1.5; font-weight: 300; }
+  .game-reference {
+    background: var(--ivory);
+    border: 1px solid var(--parchment);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    grid-row: 1;
+    grid-column: 3;
+  }
+  .gr-label { font-size: 0.65rem; color: var(--text-faint); letter-spacing: 0.12em; font-family: var(--sans); text-transform: uppercase; }
+  .gr-img {
+    aspect-ratio: 1;
+    background: var(--cream);
+    border: 1px solid var(--parchment);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .gr-img span { font-size: 0.6rem; color: var(--text-faint); font-family: var(--sans); text-align: center; }
+  .gr-colors {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+  }
+  .color-swatch {
+    aspect-ratio: 1;
+    border: 1px solid var(--parchment);
+    border-radius: 50%;
+  }
+  .game-tips {
+    background: var(--text-dark);
+    border: none;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-row: 2;
+    grid-column: 1 / 3;
+  }
+  .gt-tip { font-size: 0.8rem; color: rgba(250,248,245,0.6); font-family: var(--sans); font-weight: 300; }
+  .btn-submit-work {
+    padding: 0.6rem 1.75rem;
+    background: var(--dusty-rose);
+    color: var(--warm-white);
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    border: none;
+    cursor: default;
+    font-weight: 400;
+  }
+  .game-ref-footer {
+    grid-row: 2;
+    grid-column: 3;
+    background: var(--ivory);
+    border: 1px solid var(--parchment);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .game-ref-footer span {
+    font-size: 0.65rem;
+    color: var(--text-faint);
+    font-family: var(--sans);
+    text-align: center;
+    line-height: 1.5;
+  }
+  @media (max-width: 900px) {
+    .game-layout { grid-template-columns: 1fr; grid-template-rows: auto; }
+    .game-toolbar, .game-canvas, .game-reference, .game-tips, .game-ref-footer { grid-column: 1; grid-row: auto; }
+  }
+
+  .chat-visual {
+    background: var(--rose-water);
+    border: 1px solid var(--line-green);
+    border-radius: 18px;
+    padding: 0;
+    max-width: 420px;
+    margin: 2.25rem auto 2.75rem;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(44,37,32,0.04);
+  }
+  .chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0;
+    padding: 0.95rem 1rem;
+    border-bottom: 1px solid rgba(169,197,155,0.24);
+    background: rgba(255,255,255,0.46);
+  }
+  .chat-header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .chat-avatar {
+    width: 34px; height: 34px;
+    background: #d9e8cf;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.76rem;
+    color: #6d8f60;
+    font-family: var(--sans);
+    font-weight: 500;
+  }
+  .chat-name { font-size: 0.86rem; color: var(--text-dark); font-family: var(--sans); font-weight: 500; }
+  .chat-status { font-size: 0.66rem; color: var(--text-faint); font-family: var(--sans); }
+  .chat-header-meta {
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    color: var(--text-faint);
+    font-family: var(--sans);
+  }
+  .chat-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    padding: 1rem 1rem 1.2rem;
+    background: linear-gradient(rgba(255,255,255,0.18), rgba(255,255,255,0.18)), var(--rose-water);
+  }
+  .chat-time {
+    font-size: 0.63rem;
+    color: var(--text-faint);
+    font-family: var(--sans);
+    text-align: center;
+    margin: 0.2rem 0 0.4rem;
+  }
+  .chat-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.45rem;
+  }
+  .chat-row.them { justify-content: flex-start; }
+  .chat-row.me { justify-content: flex-end; }
+  .chat-bubble {
+    padding: 0.72rem 0.95rem;
+    border-radius: 1.1rem;
+    font-size: 0.82rem;
+    font-family: var(--sans);
+    line-height: 1.58;
+    font-weight: 300;
+    max-width: 78%;
+    position: relative;
+  }
+  .chat-bubble.them {
+    background: #ffffff;
+    color: var(--text-dark);
+    border-radius: 0.45rem 1.1rem 1.1rem 1.1rem;
+    box-shadow: 0 1px 0 rgba(44,37,32,0.04);
+  }
+  .chat-bubble.me {
+    background: #d7f0bf;
+    color: #21301d;
+    border-radius: 1.1rem 0.45rem 1.1rem 1.1rem;
+    box-shadow: 0 1px 0 rgba(44,37,32,0.04);
+  }
+  .chat-note {
+    padding: 0 1rem 0.95rem;
+    text-align: right;
+    font-size: 0.64rem;
+    color: var(--text-faint);
+    font-family: var(--sans);
+    letter-spacing: 0.04em;
+  }
+
+  .mi2-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .mi2-option {
+    padding: 1.5rem;
+    background: var(--warm-white);
+    border: 1px solid var(--parchment);
+    cursor: pointer;
+    transition: border-color 0.2s, transform 0.15s;
+    text-align: left;
+  }
+  .mi2-option:hover { border-color: var(--dusty-rose); transform: translateY(-2px); }
+  .mi2-option.selected { border-color: var(--rose-accent); background: var(--ivory); }
+  .mi2-opt-num {
+    font-size: 0.65rem;
+    color: var(--dusty-rose);
+    letter-spacing: 0.15em;
+    font-family: var(--sans);
+    margin-bottom: 0.5rem;
+  }
+  .mi2-opt-text {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    font-family: var(--sans);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+  @media (max-width: 600px) {
+    .mi2-options { grid-template-columns: 1fr; }
+  }
+
+  #ending {
+    background: var(--cream);
+    text-align: center;
+    padding: 4.4rem 2rem 6.5rem;
+    border-top: 1px solid var(--parchment);
+  }
+  .ending-divider {
+    width: 40px;
+    height: 1px;
+    background: var(--dusty-rose);
+    margin: 2.2rem auto;
+  }
+  .credits {
+    max-width: 600px;
+    margin: 0 auto 2.3rem;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .credit-group h4 {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    font-family: var(--sans);
+    margin-bottom: 0.75rem;
+    font-weight: 400;
+  }
+  .credit-group p {
+    font-size: 0.85rem;
+    color: var(--text-mid);
+    font-family: var(--sans);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+  .share-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2.2rem;
+    flex-wrap: wrap;
+  }
+  .share-btn {
+    padding: 0.7rem 1.75rem;
+    border: 1px solid var(--parchment);
+    background: transparent;
+    color: var(--text-mid);
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 400;
+  }
+  .share-btn:hover { border-color: var(--dusty-rose); color: var(--text-dark); }
+  .back-top {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: var(--text-light);
+    text-decoration: none;
+    font-family: var(--sans);
+    transition: color 0.2s;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-weight: 300;
+  }
+  .back-top:hover { color: var(--text-dark); }
+  .footer-credit {
+    margin-top: 3.5rem;
+    font-size: 0.7rem;
+    color: var(--text-faint);
+    font-family: var(--sans);
+    letter-spacing: 0.08em;
+    font-weight: 300;
+  }
+
+  .section-breaker {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .sb-line { flex: 1; height: 1px; background: var(--parchment); }
+  .sb-text {
+    font-size: 0.65rem;
+    color: var(--text-faint);
+    letter-spacing: 0.2em;
+    font-family: var(--sans);
+    white-space: nowrap;
+    font-weight: 300;
+  }
+
+  .reveal-text,
+  .reveal-image,
+  .reveal-quote,
+  .fade-in,
+  .soft-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.85s ease, transform 0.85s ease, filter 0.85s ease;
+    will-change: transform, opacity, filter;
+  }
+  .reveal-text.visible,
+  .reveal-image.visible,
+  .reveal-quote.visible,
+  .fade-in.visible,
+  .soft-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-image { transform: translateY(30px); }
+  .reveal-quote,
+  .soft-reveal {
+    filter: blur(6px);
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  .reveal-quote.visible,
+  .soft-reveal.visible {
+    filter: blur(0);
+    opacity: 1;
+  }
+  .parallax-slow {
+    transform: translateY(var(--parallax-text));
+    transition: transform 0.1s linear;
+    will-change: transform;
+  }
+  .parallax-fast {
+    transform: translateY(var(--parallax-image));
+    transition: transform 0.1s linear;
+    will-change: transform;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-text,
+    .reveal-image,
+    .reveal-quote,
+    .fade-in,
+    .soft-reveal {
+      opacity: 1 !important;
+      transform: none !important;
+      filter: none !important;
+    }
+    .parallax-slow,
+    .parallax-fast,
+    .hero-image-placeholder {
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+
+  #progress-bar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 2px;
+    background: var(--dusty-rose);
+    width: 0%;
+    z-index: 200;
+    transition: width 0.1s linear;
+  }
+
+
+  /* ── Mobile hero overlap fix: keep desktop layout unchanged ── */
+  @media (max-width: 768px) {
+    #hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      min-height: auto;
+      padding-top: 5.25rem;
+      overflow: visible;
+      align-items: start;
+    }
+
+    #hero .hero-left {
+      width: 100%;
+      max-width: 100%;
+      padding: 2.2rem 1.35rem 1.75rem;
+      transform: none !important;
+      position: relative;
+      z-index: 2;
+    }
+
+    #hero .hero-title {
+      width: 100%;
+      max-width: 100%;
+      white-space: normal !important;
+      word-break: keep-all;
+      overflow-wrap: anywhere;
+      text-wrap: balance;
+      font-size: clamp(2.55rem, 12vw, 3.7rem);
+      line-height: 1.08;
+    }
+
+    #hero .hero-subtitle {
+      font-size: clamp(1.08rem, 5vw, 1.35rem);
+      margin-bottom: 1.6rem;
+    }
+
+    #hero .hero-punchline {
+      max-width: 100%;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+
+    #hero .hero-right {
+      width: 100%;
+      height: auto;
+      padding: 0 1.35rem 2.5rem;
+      transform: none !important;
+      position: relative;
+      z-index: 1;
+    }
+
+    #hero .hero-image-placeholder {
+      width: 100%;
+      max-width: none;
+      aspect-ratio: 16 / 9;
+      transform: none !important;
+    }
+
+    #hero .parallax-slow,
+    #hero .parallax-fast {
+      transform: none !important;
+    }
+  }
+
+  @media (max-width: 420px) {
+    #hero .hero-title {
+      font-size: clamp(2.35rem, 12.5vw, 3.25rem);
+      line-height: 1.1;
+    }
+
+    #hero .hero-left {
+      padding-left: 1.2rem;
+      padding-right: 1.2rem;
+    }
+
+    #hero .hero-right {
+      padding-left: 1.2rem;
+      padding-right: 1.2rem;
+    }
+  }
+
+</style>
+</head>
+<body>
+<div id="progress-bar"></div>
+<nav id="main-nav">
+  <a href="#hero" class="nav-logo chapter-link" data-target="hero">指尖上的產業擴張</a>
+  <ul class="nav-chapters">
+    <li><a href="#ch1" class="chapter-link" data-target="ch1">美甲熱潮</a></li>
+    <li><a href="#ch2" class="chapter-link" data-target="ch2">社群接案</a></li>
+    <li><a href="#ch3" class="chapter-link" data-target="ch3">證照灰區</a></li>
+    <li><a href="#ch4" class="chapter-link" data-target="ch4">消費糾紛</a></li>
+    <li><a href="#ch5" class="chapter-link" data-target="ch5">制度未來</a></li>
+  </ul>
+</nav>
+<section id="hero">
+  <div class="hero-left reveal-text parallax-slow">
+    <p class="hero-label">台灣美甲產業專題</p>
+    <h1 class="hero-title">指尖上的產業擴張</h1>
+    <p class="hero-subtitle">美甲熱潮下的制度隱憂</p>
+    <p class="hero-punchline">當美甲從流行變成產業，制度真的跟上了嗎？</p>
+    <a href="#ch1" class="btn-read" id="btn-read">開始閱讀</a>
+  </div>
+  <div class="hero-right parallax-fast">
+    <div class="hero-image-placeholder" id="hero-image-placeholder">
+      <img src="images/nail-industry-main-cover.jpg" alt="封面主視覺圖片">
+      <div class="placeholder-icon">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect x="6" y="4" width="20" height="24" rx="2" stroke="#C9A99A" stroke-width="1.5"/>
+          <path d="M10 10h12M10 15h12M10 20h7" stroke="#C9A99A" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <p class="placeholder-label">封面主視覺圖片</p>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>向下滑動</span>
+  </div>
+</section>
+<div id="chapter-nav">
+  <div class="chapter-nav-inner">
+    <a class="ch-nav-item chapter-link" href="#ch1" data-target="ch1"><span class="ch-num">CH 01</span><span class="ch-title">美甲熱潮與產業擴張</span></a>
+    <a class="ch-nav-item chapter-link" href="#ch2" data-target="ch2"><span class="ch-num">CH 02</span><span class="ch-title">社群翻轉接案管道</span></a>
+    <a class="ch-nav-item chapter-link" href="#ch3" data-target="ch3"><span class="ch-num">CH 03</span><span class="ch-title">證照、專業與市場灰區</span></a>
+    <a class="ch-nav-item chapter-link" href="#ch4" data-target="ch4"><span class="ch-num">CH 04</span><span class="ch-title">消費糾紛與法律保障</span></a>
+    <a class="ch-nav-item chapter-link" href="#ch5" data-target="ch5"><span class="ch-num">CH 05</span><span class="ch-title">制度分類與產業未來</span></a>
+  </div>
+</div>
+<section id="ch1" data-section-title="第一章">
+  <div class="article-section fade-in reveal-text parallax-slow">
+    <div class="section-header reveal-text">
+      <span class="section-num">第一章</span>
+      <h2 class="section-title">美甲熱潮與產業擴張</h2>
+      <p class="section-intro">一層薄薄的糖霜，如何翻轉出一整個產業。</p>
+    </div>
+    <div class="article-body">
+      <p class="dropcap">陽光下，一抹細緻的珠光在指尖流動，像是一層薄薄的糖霜，在不同角度映出柔和的金屬光澤。這種被稱為「甜甜圈美甲」（Glazed Donut Nails）的設計，因模特兒海莉．羅德．比伯（Hailey Rhode Bieber）在社群平台分享而迅速走紅，成為近年全球流行的美甲風格之一。隨著這股風潮擴散，越來越多年輕人開始嘗試美甲服務。</p>
+      <p>打開社群媒體搜尋「美甲」關鍵字，隨之而來的是各式各樣的作品與工作室帳號。根據 IQHashtag 網站資料，光是在 Instagram（以下簡稱 IG）上標註「美甲」相關標籤的貼文就高達約 1.5 億則，並正以每日約 3.3 萬則的速度急速增加。</p>
+    </div>
+  </div>
+  <div class="social-carousel-wrap reveal-image parallax-fast">
+    <div class="social-carousel" id="social-carousel">
+      <button class="carousel-arrow prev" type="button" aria-label="上一張" id="carousel-prev">&#8592;</button>
+      <div class="carousel-track" id="carousel-track">
+        <div class="social-slide is-active"><div class="social-card"><img src="images/nail-social-media-growth.jpg" alt="IG 美甲作品視覺拼貼"><div class="placeholder-icon" style="width:36px;height:36px;"></div><p class="sc-label">IG 美甲作品<br>視覺拼貼</p></div></div>
+        <div class="social-slide"><div class="social-card"><img src="images/glazed-donut-nails-style.jpg" alt="甜甜圈美甲風格圖"><div class="placeholder-icon" style="width:36px;height:36px;"></div><p class="sc-label">甜甜圈美甲<br>風格圖</p></div></div>
+        <div class="social-slide"><div class="social-card"><img src="images/nail-studio-booking-scene.jpg" alt="工作室環境情境照"><div class="placeholder-icon" style="width:36px;height:36px;"></div><p class="sc-label">工作室環境<br>情境照</p></div></div>
+        <div class="social-slide"><div class="social-card"><img src="images/nail-social-data-visual.jpg" alt="社群數據視覺化"><div class="placeholder-icon" style="width:36px;height:36px;"></div><p class="sc-label">社群數據<br>視覺化</p></div></div>
+      </div>
+      <button class="carousel-arrow next" type="button" aria-label="下一張" id="carousel-next">&#8594;</button>
+    </div>
+    <div class="carousel-dots" id="carousel-dots"></div>
+  </div>
+  <div class="data-visual-row fade-in reveal-image parallax-fast" id="data-visual-row">
+    <div class="stat-card"><div class="stat-num"><span class="count-up" data-target="1.5" data-decimals="1">0</span><span class="stat-unit">億</span></div><p class="stat-label">IG 上標記「美甲」<br>相關標籤的貼文總數</p></div>
+    <div class="stat-card"><div class="stat-num"><span class="count-up" data-target="3.3" data-decimals="1">0</span><span class="stat-unit">萬</span></div><p class="stat-label">每日新增美甲<br>相關 IG 貼文數量</p></div>
+    <div class="stat-card"><div class="stat-num"><span class="count-up" data-target="1.2" data-decimals="1">0</span><span class="stat-unit">倍</span></div><p class="stat-label">台灣美甲美睫業家數<br>2018–2023 五年間成長</p></div>
+  </div>
+  <div class="article-section fade-in reveal-text parallax-slow">
+    <div class="article-body">
+      <p>隨著美甲風潮興起，個人美甲工作室逐漸普及，「人人皆能成為美甲師」不再只是想像。根據財政部統計處 2024 年統計，2018 年至 2023 年間，台灣美甲美睫業家數大幅成長，從 1587 家增加到 3523 家，五年間成長超過 1.2 倍，是美容產業中增長速度最快的類別之一。</p>
+      <div class="pull-quote reveal-quote soft-reveal"><p>美甲已不再只是附屬於其他美容服務的一環，而逐漸轉型為具備獨立發展潛力的創業首選。</p></div>
+      <p>在產業規模與人才供給同步擴大的趨勢下，美甲已不再只是附屬於其他美容服務的一環，而逐漸轉型為具備獨立發展潛力的創業首選。然而，在產值急速膨脹的同時，專業門檻與制度規範的模糊地帶，正悄然浮現。</p>
+      <div class="img-placeholder img-placeholder-tall fade-in reveal-image parallax-fast"><img src="images/nail-salon-growth-chart.png" alt="台灣美甲美睫業家數成長圖表"><div class="ph-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#AFA29A" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5" stroke="#AFA29A" stroke-width="1.5"/><path d="M21 15l-5-5L5 21" stroke="#AFA29A" stroke-width="1.5" stroke-linecap="round"/></svg></div><p class="ph-text">台灣美甲美睫業家數成長圖表<br>（2018–2023）</p></div>
+    </div>
+  </div>
+</section>
+<div class="section-breaker"><div class="sb-line"></div><span class="sb-text">第二章</span><div class="sb-line"></div></div>
+<section id="ch2" data-section-title="第二章">
+  <div class="article-section fade-in reveal-text parallax-slow">
+    <div class="section-header reveal-text"><span class="section-num">第二章</span><h2 class="section-title">社群翻轉接案管道</h2><p class="section-intro">低門檻成美甲入行門票，社群平台改寫了整個行業的樣貌。</p></div>
+    <div class="article-body">
+      <p class="dropcap">過去，消費者多透過實體店面或熟人介紹尋找美甲師；隨著社群平台興起，尋找服務的管道逐漸轉往線上。此轉變不僅擴大消費者的選擇範圍，也降低了業者的從業門檻，即使在無實體店面情況下，仍能透過曝光作品建立客源。</p>
+      <p>「一直以來我都想創業，當時認為美甲創業的門檻最低，於是開始經營美甲工作室。」從業三年的美甲師 Wendy（化名）回憶道。他在高中就讀美容相關科系時初次接觸美甲，並考取證照，畢業後即開啟他的接案生涯。起步時，Wendy 從親友開始累積作品，同時透過 IG 廣告投放經營個人品牌。由於美甲具備「高回訪性」，顧客每三到四周就需重新保養與施作，因此一旦建立信任度，客源便能轉化為穩定收入。</p>
+      <p>與 Wendy 的背景不同，從業六年的美甲師吳宜融並未考取相關證照，而是選擇從學徒做起。他在前雇主的介紹下逐漸累積客源，直到一年前才獨立出來創業。即便已自行執業，仍持續進修各樣美感課程與進階技術，補足細項專業。</p>
+    </div>
+  </div>
+  <div class="compare-intro reveal-text parallax-slow">
+    <div class="pull-quote reveal-quote soft-reveal" style="margin-top:0;"><p>兩位美甲師的養成之路截然不同，卻殊途同歸地在市場站穩腳跟。</p></div>
+    <p class="article-body" style="margin:0;"><span style="display:block;font-size:1rem;line-height:2;color:var(--text-dark);font-weight:300;">以下比較區將 Wendy 與吳宜融的入行歷程、接案方式、證照狀況與創業現況拆開對照。桌機版可左右並讀、各自獨立捲動；手機版則會改為上下堆疊閱讀。</span></p>
+  </div>
+  <div class="compare-board fade-in reveal-image parallax-fast">
+    <article class="compare-panel">
+      <header class="compare-head"><p class="compare-name">Wendy（化名）</p><p class="compare-tag">從業三年｜有證照｜IG 接案</p></header>
+      <div class="compare-scroll">
+        <p class="compare-intro-copy">在高中就讀美容相關科系時初次接觸美甲，並考取證照，畢業後即開啟接案生涯。起步時從親友開始累積作品，同時透過 IG 廣告投放經營個人品牌。</p>
+        <div class="milestone-list">
+          <div class="milestone"><p class="milestone-kicker">起點</p><p class="milestone-title">美容科系入門</p><p class="milestone-text">在校期間接觸美甲，將原本想創業的念頭轉向美甲工作室。</p></div>
+          <div class="milestone"><p class="milestone-kicker">專業累積</p><p class="milestone-title">先考照，再建立作品量</p><p class="milestone-text">持有證照，並從親友開始累積施作作品與口碑。</p></div>
+          <div class="milestone"><p class="milestone-kicker">接案方式</p><p class="milestone-title">依靠 IG 經營品牌</p><p class="milestone-text">透過廣告投放與社群經營觸及新客，逐漸形成穩定回訪。</p></div>
+          <div class="milestone"><p class="milestone-kicker">創業現況</p><p class="milestone-title">由住家接案走向獨立工作室</p><p class="milestone-text">客流量從每月二、三十人，提升到近百人，逐步站穩市場。</p></div>
+        </div>
+        <div class="mini-stats">
+          <div class="mini-stat"><span class="mini-stat-label">起步客流量</span><span class="mini-stat-value">每月二、三十人</span></div>
+          <div class="mini-stat"><span class="mini-stat-label">現在客流量</span><span class="mini-stat-value">穩定近百人／月</span></div>
+          <div class="mini-stat"><span class="mini-stat-label">工作空間</span><span class="mini-stat-value">住家 → 獨立工作室</span></div>
+          <div class="mini-stat"><span class="mini-stat-label">證照狀況</span><span class="mini-stat-value">持有相關證照</span></div>
+        </div>
+      </div>
+    </article>
+    <article class="compare-panel">
+      <header class="compare-head"><p class="compare-name">吳宜融</p><p class="compare-tag">從業六年｜無證照｜學徒出身</p></header>
+      <div class="compare-scroll">
+        <p class="compare-intro-copy">並未考取相關證照，而是選擇從學徒做起。在前雇主的介紹下逐漸累積客源，直到一年前才獨立出來創業。即便已自行執業，仍持續進修各樣美感課程與進階技術。</p>
+        <div class="milestone-list">
+          <div class="milestone"><p class="milestone-kicker">起點</p><p class="milestone-title">從學徒制度進入產業</p><p class="milestone-text">沒有先透過證照入行，而是在工作現場中累積實作經驗。</p></div>
+          <div class="milestone"><p class="milestone-kicker">客源建立</p><p class="milestone-title">依靠前雇主介紹逐步站穩</p><p class="milestone-text">在熟人與前工作場域的引介下，慢慢累積穩定顧客來源。</p></div>
+          <div class="milestone"><p class="milestone-kicker">專業補強</p><p class="milestone-title">持續進修技術與美感</p><p class="milestone-text">即便沒有證照，仍持續投入進階課程與審美能力訓練。</p></div>
+          <div class="milestone"><p class="milestone-kicker">創業現況</p><p class="milestone-title">約一年前獨立創業</p><p class="milestone-text">從學徒身份轉為個體工作者，建立自己的服務模式與顧客關係。</p></div>
+        </div>
+        <div class="mini-stats">
+          <div class="mini-stat"><span class="mini-stat-label">入行方式</span><span class="mini-stat-value">學徒制度</span></div>
+          <div class="mini-stat"><span class="mini-stat-label">獨立時間</span><span class="mini-stat-value">約一年前自行創業</span></div>
+          <div class="mini-stat"><span class="mini-stat-label">持續進修</span><span class="mini-stat-value">美感課程 + 進階技術</span></div>
+          <div class="mini-stat"><span class="mini-stat-label">證照狀況</span><span class="mini-stat-value">未持有相關證照</span></div>
+        </div>
+      </div>
+    </article>
+  </div>
+  <div class="article-section fade-in reveal-text parallax-slow">
+    <div class="article-body">
+      <p>這兩位美甲師的養成之路截然不同，卻殊途同歸地在市場站穩腳跟，這正反映美甲產業的特性：相較於其他美容類別，美甲的培訓與證照門檻較為寬鬆，從業者只要一個小型工作空間，並透過社群平台經營品牌，就有機會開始接案。</p>
+      <div class="pull-quote reveal-quote soft-reveal"><p>「一直以來我都想創業，當時認為美甲創業的門檻最低，於是開始經營美甲工作室。」</p><cite>— Wendy（化名），從業三年美甲師</cite></div>
+      <p>然而，在缺乏統一執業標準與「學成即可創業」的風氣下，市面上美甲師的服務品質也因此呈現出落差。</p>
+      <div class="img-placeholder img-placeholder-short reveal-image parallax-fast"><img src="images/nail-studio-portrait-scene.jpg" alt="工作室環境情境照或人物插畫"><div class="ph-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#AFA29A" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5" stroke="#AFA29A" stroke-width="1.5"/><path d="M21 15l-5-5L5 21" stroke="#AFA29A" stroke-width="1.5" stroke-linecap="round"/></svg></div><p class="ph-text">工作室環境情境照或人物插畫</p></div>
+    </div>
+  </div>
+</section>
+<div class="mini-interaction" id="mini1">
+  <div class="mini1-game-container">
+    <div id="mini1-start-screen" class="mini1-start mini1-fade-in">
+      <span class="mini1-kicker">沉浸式調查遊戲</span>
+      <h3 class="mini1-title">滑 IG 找美甲師，<br>你真的懂得避雷嗎？</h3>
+      <p class="mini1-desc">這週末你想做個漂亮的指甲。眼前有三個不同風格的美甲工作室，你要進入他們的社群平台中找尋線索並與他們實際溝通。不要放過任何蛛絲馬跡，你的觀察力，決定了這是一場完美體驗，還是花錢受罪。</p>
+      <button class="mini1-btn" type="button" onclick="mini1ShowScreen('selection')">開始搜查</button>
+    </div>
+
+    <div id="mini1-selection-screen" class="mini1-selection mini1-screen-hidden">
+      <div class="mini1-selection-head">
+        <p class="mi-label">小互動 · 你的選擇</p>
+        <h3 class="mini1-heading">你想進一步調查哪家工作室？</h3>
+        <p class="mini1-subtext">點擊卡片進入主頁查看細節。</p>
+      </div>
+      <div class="mini1-profiles-grid">
+        <article class="mini1-profile-card" onclick="mini1OpenProfile('A')">
+          <div class="mini1-avatar" style="background:#C9A99A;color:#fff;"><img src="images/avatar_A.jpg" alt="M"><span>M</span></div>
+          <p class="mini1-profile-name">Mia_Nails_Art</p>
+          <p class="mini1-profile-meta">粉絲：18.5k ｜ 仙女製造機</p>
+          <p class="mini1-profile-link">進入主頁</p>
+        </article>
+        <article class="mini1-profile-card" onclick="mini1OpenProfile('B')">
+          <div class="mini1-avatar" style="background:#EDE8DF;color:#2C2520;"><img src="images/avatar_B.jpg" alt="K"><span>K</span></div>
+          <p class="mini1-profile-name">K.Studio_</p>
+          <p class="mini1-profile-meta">粉絲：1.2k ｜ 主打平價特惠</p>
+          <p class="mini1-profile-link">進入主頁</p>
+        </article>
+        <article class="mini1-profile-card" onclick="mini1OpenProfile('C')">
+          <div class="mini1-avatar" style="background:#D4C4B0;color:#fff;"><img src="images/avatar_C.jpg" alt="Y"><span>Y</span></div>
+          <p class="mini1-profile-name">Yu_Nail_Design</p>
+          <p class="mini1-profile-meta">粉絲：4.5k ｜ 專注細節保養</p>
+          <p class="mini1-profile-link">進入主頁</p>
+        </article>
+      </div>
+    </div>
+
+    <div id="mini1-investigate-screen" class="mini1-investigate mini1-screen-hidden">
+      <div class="mini1-topbar">
+        <button class="mini1-back-link" type="button" onclick="mini1ShowScreen('selection')">
+          <span class="mini1-inline-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"></path></svg>
+          </span>
+          <span>返回列表</span>
+        </button>
+        <div class="mini1-clue-counter" id="mini1-clue-counter">已調查線索：0/3</div>
+      </div>
+      <div class="mini1-investigate-card">
+        <div class="mini1-ig-header">
+          <div class="mini1-investigate-avatar" id="mini1-inv-avatar"></div>
+          <div style="flex:1; min-width:0;">
+            <h3 class="mini1-profile-name" id="mini1-inv-name" style="margin-bottom:0.85rem;"></h3>
+            <div class="mini1-profile-stats">
+              <div><strong id="mini1-inv-posts"></strong>貼文</div>
+              <div><strong id="mini1-inv-followers"></strong>粉絲</div>
+            </div>
+          </div>
+        </div>
+        <div class="mini1-profile-bio mini1-clue" id="mini1-clue-bio" onclick="mini1DiscoverClue('bio')"></div>
+        <div class="mini1-highlights mini1-clue" id="mini1-clue-highlight" onclick="mini1DiscoverClue('highlight')"></div>
+        <div class="mini1-photo-grid mini1-clue" id="mini1-clue-photo" onclick="mini1DiscoverClue('photo')"></div>
+      </div>
+      <div class="mini1-investigate-footer">
+        <p class="mini1-investigate-note">點選上方發光區域，收集全部 3 個線索</p>
+        <button id="mini1-btn-dm" class="mini1-btn" type="button" disabled onclick="mini1StartChat()">發送私訊預約</button>
+      </div>
+    </div>
+
+    <div id="mini1-chat-screen" class="mini1-chat mini1-screen-hidden">
+      <div class="mini1-chat-head">
+        <h3 class="mini1-heading">私訊交涉中...</h3>
+        <p class="mini1-subtext">觀察對方的態度與專業度。</p>
+      </div>
+      <div class="mini1-chat-box">
+        <div class="mini1-chat-header" id="mini1-chat-header-name"></div>
+        <div class="mini1-chat-messages" id="mini1-chat-messages"></div>
+      </div>
+      <div class="mini1-chat-actions" id="mini1-chat-actions">
+        <button class="mini1-btn-ghost" type="button" onclick="mini1ShowScreen('selection')">覺得不妙，重選一家</button>
+        <button class="mini1-btn" type="button" onclick="mini1ShowResult()">確認預約！</button>
+      </div>
+    </div>
+
+    <div id="mini1-result-screen" class="mini1-result mini1-screen-hidden">
+      <div class="mini1-result-head">
+        <h3 class="mini1-heading">預約結果</h3>
+        <p class="mini1-subtext">這場美甲工作室選擇，你過關了嗎？</p>
+      </div>
+      <div class="mini1-result-card">
+        <div id="mini1-result-icon" class="mini1-result-icon">✓</div>
+        <h4 id="mini1-result-heading" class="mini1-result-subheading"></h4>
+        <p id="mini1-result-desc" class="mini1-result-desc"></p>
+        <div id="mini1-result-quote" class="mini1-result-quote"></div>
+        <div class="mini1-result-tips-wrap">
+          <p class="mini1-result-tips-title">避雷分析指南：</p>
+          <ul id="mini1-result-tips" class="mini1-result-tips"></ul>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2rem;">
+        <button class="mini1-btn" type="button" onclick="mini1ResetGame()">再玩一次</button>
+      </div>
+    </div>
+
+    <div id="mini1-clue-modal" class="mini1-modal-overlay mini1-screen-hidden">
+      <div class="mini1-modal-content mini1-fade-in">
+        <div class="mini1-modal-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+        </div>
+        <h4 class="mini1-modal-title" id="mini1-modal-title"></h4>
+        <p class="mini1-modal-text" id="mini1-modal-text"></p>
+        <button class="mini1-btn" type="button" onclick="mini1CloseModal()">記下線索</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section-breaker"><div class="sb-line"></div><span class="sb-text">第三章</span><div class="sb-line"></div></div>
+<section id="ch3" data-section-title="第三章">
+  <div class="sticky-split fade-in reveal-text parallax-slow">
+    <div>
+      <div class="section-header reveal-text"><span class="section-num">第三章</span><h2 class="section-title">證照「僅供參考」？<br>美甲缺乏門檻的<br>品質危機</h2><p class="section-intro">官方與民間制度並行，市場標準難以統一。</p></div>
+      <div class="article-body">
+        <p class="dropcap">目前台灣市場上的美甲證照主要分為兩大體系：一類是由勞動部核可的「指甲彩繪技能職類測驗」（TNA），性質等同國家丙級檢定；另一類則是由中華民國指甲彩繪睫毛業產業工會全國聯合會（TNL）主導的「TNL美甲師認證」，通常是初入行者的首選。此外，市場上亦存在多種由民間機構發放的分級證照。</p>
+        <p>然而，台灣的美甲證照制度尚未建立統一的管理機制，法律也未規定業者必須持證才能從業。換言之，即使未取得證照，業者仍可透過社群平台接案，甚至開設美甲培訓課程。</p>
+        <div class="pull-quote reveal-quote soft-reveal"><p>「像是業界中厲害的美甲師，可能在施作較為基礎的款式時，就會耗時將近四小時。」</p><cite>— 小恩（化名），美甲師</cite></div>
+        <p>美甲師小恩（化名）分享，目前所認識的同業中，具有美甲證照的比例約為七分之一。他認為，消費者在選擇服務時，往往不以證照為主要依據，而是更看重作品風格與審美契合度。他認為這不代表美甲師技術不佳，而是對細節的極致追求，因此制式化的證照考試並不能作為判斷技術高低的唯一標準。</p>
+        <p>吳宜融也抱持相似看法，他認為證照考試比較偏重基礎護理知識與器材使用「有證照固然是加分項，但在選擇合作的美甲師夥伴時，我更看重實作能力。」</p>
+        <p>但是，缺乏門檻也帶來隱憂。消費者倪倪（化名）坦言，預約時他通常只看 IG 上的作品集風格，卻也因此容易落入「修圖陷阱」，除了成品與社群上的作品照片落差極大外，甚至可能承擔因美甲師技術不佳而受傷的風險。</p>
+        <p>造成這些現象的核心原因，在於官方制度仍將美甲歸類於「美容產業」之下。由於缺乏獨立的專法規範，較具專業性與技術性的證照多由民間機構發放，而非政府統一規範，進而形成官方與民間制度並行、市場標準難以統一的現況。</p>
+      </div>
+    </div>
+    <div class="sticky-right parallax-fast">
+      <div class="pull-quote reveal-quote soft-reveal" style="margin:0;"><p style="font-size:1.05rem;">有證照固然是加分項，但我更看重實作能力。</p><cite>— 吳宜融</cite></div>
+      <div class="sticky-visual reveal-image"><img src="images/nail-license-grey-zone.jpg" alt="法規灰區概念圖：官方制度、民間認證與現行法規"><div class="ph-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" stroke="#AFA29A" stroke-width="1.5"/><rect x="9" y="3" width="6" height="4" rx="1" stroke="#AFA29A" stroke-width="1.5"/></svg></div><p class="sv-label">法規灰區概念圖<br>官方制度 vs 民間認證 vs 現行法規</p></div>
+    </div>
+  </div>
+
+  <div class="chapter-chart-block fade-in reveal-image parallax-fast">
+    <div class="certificate-growth-visual" aria-label="台灣美甲證照體系比較與開課成長資訊">
+      <div class="chart-container">
+        <div class="chart-header">
+          <h3 class="chart-title">台灣美甲證照體系比較</h3>
+          <p class="chart-subtitle">官方、公會與民間標準的差異</p>
+        </div>
+        <div class="cards-wrapper" id="cert-cards-wrapper">
+          <button class="card-container" type="button" aria-expanded="false" aria-label="TNA 證照卡片，點擊翻轉查看細節">
+            <div class="card">
+              <div class="card-face card-front">
+                <span class="front-badge">官方效力</span>
+                <h4 class="front-title">TNA</h4>
+                <p class="front-subtitle">指甲彩繪技能測驗<br>(勞動部核准)</p>
+                <span class="click-hint">點擊翻轉查看細節</span>
+              </div>
+              <div class="card-face card-back">
+                <h4 class="back-title">TNA 檢定重點</h4>
+                <div class="info-group">
+                  <div class="info-label">核心認可度</div>
+                  <div class="info-text">唯一具備國家級效力，等同「丙級技術士」。</div>
+                </div>
+                <div class="info-group">
+                  <div class="info-label">主要檢定重點</div>
+                  <div class="info-text">著重衛生法規、基礎保養與彩繪規範。</div>
+                </div>
+                <div class="info-group">
+                  <div class="info-label">適合對象</div>
+                  <div class="info-text">計畫開設正規沙龍，需要國家證照背書者。</div>
+                </div>
+              </div>
+            </div>
+          </button>
+          <button class="card-container" type="button" aria-expanded="false" aria-label="TNL 證照卡片，點擊翻轉查看細節">
+            <div class="card">
+              <div class="card-face card-front">
+                <span class="front-badge">業界普及</span>
+                <h4 class="front-title">TNL</h4>
+                <p class="front-subtitle">美甲師認證<br>(產業工會主導)</p>
+                <span class="click-hint">點擊翻轉查看細節</span>
+              </div>
+              <div class="card-face card-back">
+                <h4 class="back-title">TNL 檢定重點</h4>
+                <div class="info-group">
+                  <div class="info-label">核心認可度</div>
+                  <div class="info-text">台灣覆蓋率最高，多數技職院校與沙龍認可。</div>
+                </div>
+                <div class="info-group">
+                  <div class="info-label">主要檢定重點</div>
+                  <div class="info-text">循序漸進的實務技術，高階專注凝膠延甲設計。</div>
+                </div>
+                <div class="info-group">
+                  <div class="info-label">適合對象</div>
+                  <div class="info-text">剛入行新手(考二級)及想證明基本功的美甲師。</div>
+                </div>
+              </div>
+            </div>
+          </button>
+          <button class="card-container" type="button" aria-expanded="false" aria-label="JNEC JNA 證照卡片，點擊翻轉查看細節">
+            <div class="card">
+              <div class="card-face card-front">
+                <span class="front-badge">高含金量</span>
+                <h4 class="front-title">JNEC/JNA</h4>
+                <p class="front-subtitle">國際/民間證照<br>(以日本體系為例)</p>
+                <span class="click-hint">點擊翻轉查看細節</span>
+              </div>
+              <div class="card-face card-back">
+                <h4 class="back-title">日系檢定重點</h4>
+                <div class="info-group">
+                  <div class="info-label">核心認可度</div>
+                  <div class="info-text">無台灣官方效力，但於亞洲業界具極高知名度。</div>
+                </div>
+                <div class="info-group">
+                  <div class="info-label">主要檢定重點</div>
+                  <div class="info-text">考核極為嚴苛，極度要求日式美感與細節精準度。</div>
+                </div>
+                <div class="info-group">
+                  <div class="info-label">適合對象</div>
+                  <div class="info-text">追求極致細節、主攻高端客製化的進階美甲師。</div>
+                </div>
+              </div>
+            </div>
+          </button>
+        </div>
+        <div class="chart-note">
+          <p>台灣美甲開課數量自 2018 年 17 期增至 2023 年 110 期，反映培訓市場快速擴張。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-section fade-in reveal-text parallax-slow" style="padding-top: 0;">
+    <div class="article-body">
+      <div class="pull-quote reveal-quote soft-reveal"><p>「如果我是一個初學者，剛準備入行，根本不會知道老師需要具備多少知識才能教會自己。」</p><cite>— Wendy（化名），從業美甲師</cite></div>
+      <p>談及未來若導入官方美甲證照制度的可能方向，Wendy 建議參考美國的執業經驗。他指出，美國擁有較為明確的證照制度與訓練模式，若台灣未來要推動官方認證，應更著重於美甲技術的分級以及施作品質，「除了技術以外，指甲構造、成分等基本美甲知識，也應該是證照考試可以參考的項目。」Wendy 說道。</p>
+      <p>消費者倪倪也分享道，若要提高消費者對於證照的信賴，檢定內容應將前置作業、甲型修整與施作穩定度納入考驗，才能真正確保服務的安全性，讓證照成為保障消費者的第一道防線。</p>
+      <p>除了第一線服務，隨著市場需求升溫，投入培訓教育也成為許多美甲師的職涯選擇。據統計，台灣美甲開課數量從 2018 年的 17 期，增至 2023 年的 110 期，成長幅度驚人。然而，Wendy 進一步指出，若授課者本身教學準備不足或缺乏相關證照，對初學者而言風險極高。Wendy 建議應設立一定門檻，由工會等相關單位審核與把關，以降低「開業即開課」的情形。</p>
+    </div>
+  </div>
+</section>
+<div class="section-breaker"><div class="sb-line"></div><span class="sb-text">第四章</span><div class="sb-line"></div></div>
+<section id="ch4" data-section-title="第四章">
+  <div class="article-section fade-in reveal-text parallax-slow">
+    <div class="section-header reveal-text"><span class="section-num">第四章</span><h2 class="section-title">現行法規並未缺席<br>認知盲區讓保障失靈</h2><p class="section-intro">制度存在，但消費者與從業者雙雙看不見它。</p></div>
+    <div class="article-body">
+      <p class="dropcap">未臻完善的證照制度使社群平台經常出現美甲消費糾紛的「公審文」，內容從惡意放鳥、成品與圖片不符，到施作過程造成受傷等情況層出不窮。理論上，消費者遇到爭議時應可運用現行法律機制解決問題，但實際運作狀況卻不如預期。</p>
+      <p>台北市主任消保官林傳健指出，今年截至 3 月中旬，台北市僅有不到 10 件美甲相關爭議進入《消費者保護法》的處理程序；而在 2023 至 2025 年間，每年案件數約落在 30 至 40 件之間。林傳健分析，主要原因在於美甲服務單次消費金額多落在數百至數千元之間，金額不高，使不少消費者即使遇到爭議，也傾向自認倒楣，或選擇私下與業者和解。</p>
+      <div class="pull-quote reveal-quote soft-reveal"><p>「為了 2000 元的糾紛跑流程太麻煩了，我只想趕快私下處理完。」</p><cite>— 倪倪（化名），消費者</cite></div>
+      <p>倪倪便分享了他的慘痛經歷：他的指甲遭美甲師過度修剪，導致四隻手指破皮流血，甲面更是凹凸不平、封層佈滿氣泡，溢出的指甲油也未清理。然而向美甲師反應後，卻遭對方以「注意事項有寫不接完美主義者」為由推託，最終這筆近 2,000 元的消費，僅獲得 500 元的受傷賠償。</p>
+      <div class="chat-visual reveal-image parallax-fast soft-reveal"><div class="chat-header"><div class="chat-header-left"><div class="chat-avatar">倪</div><div><p class="chat-name">美甲師</p><p class="chat-status">LINE 對話示意</p></div></div><span class="chat-header-meta">聊天中</span></div><div class="chat-body"><p class="chat-time">今天 下午 4:12</p><div class="chat-row them"><div class="chat-bubble them">施作完成囉！請看一下有沒有問題</div></div><div class="chat-row me"><div class="chat-bubble me">四隻手指都破皮了，甲面也很不平，可以補救嗎？</div></div><div class="chat-row them"><div class="chat-bubble them">預約時注意事項有寫，本工作室不接待完美主義者喔</div></div><div class="chat-row me"><div class="chat-bubble me">但這明顯超出正常範圍……</div></div><div class="chat-row them"><div class="chat-bubble them">最多賠 500 元，這已經是我的底線了</div></div></div><div class="chat-note">以上為示意圖</div></div>
+      <p>除了消費者在面對消費糾紛備感無奈外，美甲師也同樣對爭議難解感到困擾。吳宜融坦言，他曾多次遭顧客惡意放鳥，「法律在消費糾紛保障上程序繁雜，為了減少與顧客拉扯的時間，很多時候只能自己承擔損失。」他進一步指出，雖然曾主動查詢相關資料，了解此類糾紛在制度上並非毫無保障，但因取消費或施作費多屬小額，一旦進入調解程序，耗費的時間與心力往往得不償失。</p>
+      <div class="pull-quote reveal-quote soft-reveal"><p>「現在缺乏的是從業人員對於法律的認知。」</p><cite>— 邱毓哲，社團法人中華民國美容法律協會創會理事長</cite></div>
+      <p>面對雙方在制度保障上的迷惘，社團法人中華民國美容法律協會創會理事長邱毓哲表示，美甲消費其實無異於其他產業，《消費者保護法》與民法等現行法律已有規範，「現在缺乏的是從業人員對於法律的認知。」邱毓哲說道。</p>
+      <p>以營業登記為例，美甲師小恩（化名）坦言，現行制度在實務感受上仍顯模糊，「作為剛開業的美甲師，不知道每個月僅有一兩千元的收入是否符合營業登記的標準。」對此，邱毓哲釐清，只要具備營利行為即符合營業登記的資格，若未登記可能面臨補稅或罰鍰等處分。</p>
+      <p>邱毓哲進一步指出，美甲師在踏出產業時需要清楚自身所須負擔的法律責任，例如施作過程中避免使消費者受傷、成品不得出現瑕疵等。針對美甲業常遇到的放鳥困境與交易爭議，他建議業者應加強事前預防，「服務過程之中，若能在事前預防糾紛，便能提升交易過程之中對於美甲師的保障。」他建議業者可透過預約須知或同意書等方式，在交易前釐清雙方風險與責任，這不僅能保障美甲師免於放鳥損失，也能確保交易過程的專業與安全。</p>
+    </div>
+  </div>
+</section>
+
+<section id="dispute-game" class="mini-interaction">
+  <div class="dispute-game-inner">
+    <div class="dispute-game-bridge">
+      <p>如果你是當事人，下一步會怎麼做？<br>在正式走進制度之前，先試著完成一次糾紛處理模擬。</p>
+    </div>
+
+    <div class="dispute-game-shell">
+      <div class="dispute-game-hero">
+        <div class="dispute-hero-copy">
+          <p class="dispute-kicker">情境互動 · 換你判斷</p>
+          <h3>出事了，該怎麼辦？</h3>
+          <p>從顧客申訴到美甲師自保，模擬一次小額消費糾紛可能走向哪裡。</p>
+        </div>
+        <div class="dispute-image-frame">
+          <img src="images/game-dispute-cover.jpg" alt="遊戲封面插圖" data-placeholder="game-dispute-cover.jpg">
+          <div class="dispute-img-placeholder">game-dispute-cover.jpg</div>
+        </div>
+      </div>
+
+      <div class="dispute-game-card" id="dispute-game-card">
+        <div id="dispute-start-screen" class="dispute-screen is-active">
+          <div class="dispute-section-head">
+            <p class="dispute-step-label">選擇身分</p>
+            <h4>你想從哪一邊開始處理糾紛？</h4>
+            <p>不同身分會遇到不同風險：顧客需要知道怎麼申訴，美甲師則需要知道如何留下紀錄、降低爭議。</p>
+          </div>
+          <div class="dispute-role-grid">
+            <button class="dispute-role-card" type="button" data-role="customer">
+              <div class="dispute-role-image">
+                <img src="images/character-customer-nini.jpg" alt="顧客角色倪倪" data-placeholder="character-customer-nini.jpg">
+                <div class="dispute-img-placeholder">character-customer-nini.jpg</div>
+              </div>
+              <div>
+                <span>我是顧客</span>
+                <p>遇到成品落差、受傷或退款爭議，該如何保留證據與申訴？</p>
+              </div>
+            </button>
+            <button class="dispute-role-card" type="button" data-role="artist">
+              <div class="dispute-role-image">
+                <img src="images/character-nail-artist.jpg" alt="美甲師角色" data-placeholder="character-nail-artist.jpg">
+                <div class="dispute-img-placeholder">character-nail-artist.jpg</div>
+              </div>
+              <div>
+                <span>我是美甲師</span>
+                <p>遇到放鳥、成品爭議或申訴來函，該如何事前自保？</p>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <div id="dispute-scenario-screen" class="dispute-screen">
+          <div class="dispute-scenario-layout">
+            <div class="dispute-scenario-copy">
+              <p class="dispute-step-label">糾紛情境</p>
+              <h4 id="dispute-scenario-title"></h4>
+              <p id="dispute-scenario-text"></p>
+              <button class="dispute-primary-btn" type="button" id="dispute-start-questions">開始模擬</button>
+            </div>
+            <div class="dispute-image-frame">
+              <img id="dispute-scenario-img" src="" alt="糾紛情境示意圖">
+              <div class="dispute-img-placeholder" id="dispute-scenario-placeholder"></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="dispute-question-screen" class="dispute-screen">
+          <div class="dispute-question-top">
+            <div>
+              <p class="dispute-step-label" id="dispute-progress-text">第 1 題 / 共 5 題</p>
+              <h4 id="dispute-question-title"></h4>
+            </div>
+            <button class="dispute-ghost-btn" type="button" id="dispute-change-role">切換身分</button>
+          </div>
+
+          <div class="dispute-main-grid">
+            <div class="dispute-question-area">
+              <div class="dispute-option-list" id="dispute-options"></div>
+              <div class="dispute-feedback" id="dispute-feedback">
+                <p>選擇一個處理方式，系統會顯示這一步可能帶來的影響。</p>
+              </div>
+              <button class="dispute-primary-btn" type="button" id="dispute-next-btn" disabled>下一題</button>
+            </div>
+
+            <aside class="dispute-score-panel">
+              <p class="dispute-score-title">目前指標</p>
+              <div id="dispute-score-bars"></div>
+            </aside>
+          </div>
+        </div>
+
+        <div id="dispute-result-screen" class="dispute-screen">
+          <div class="dispute-result-card">
+            <p class="dispute-step-label">你的結局</p>
+            <h4 id="dispute-ending-title"></h4>
+            <p id="dispute-ending-text"></p>
+          </div>
+
+          <div class="dispute-score-panel dispute-score-final">
+            <p class="dispute-score-title">最終指標</p>
+            <div id="dispute-final-score-bars"></div>
+          </div>
+
+          <div class="dispute-guide-card">
+            <div class="dispute-guide-head">
+              <div>
+                <p class="dispute-step-label">真實流程懶人包</p>
+                <h4 id="dispute-guide-title"></h4>
+              </div>
+             
+            </div>
+            <div class="dispute-guide-list" id="dispute-guide-list"></div>
+          </div>
+
+          <div class="dispute-source-card">
+            <p class="dispute-score-title">流程依據</p>
+            <ul id="dispute-source-list"></ul>
+          </div>
+
+          <div class="dispute-actions">
+            <button class="dispute-primary-btn" type="button" id="dispute-replay-same">重新遊玩</button>
+            <button class="dispute-ghost-btn" type="button" id="dispute-replay-other">切換另一身分</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="section-breaker"><div class="sb-line"></div><span class="sb-text">第五章</span><div class="sb-line"></div></div>
+<section id="ch5" data-section-title="第五章">
+  <div class="article-section fade-in reveal-text parallax-slow" style="padding-bottom:4.5rem;">
+    <div class="section-header reveal-text"><span class="section-num">第五章</span><h2 class="section-title">產業分類處模糊地帶<br>美甲專屬執業標準<br>待完善</h2><p class="section-intro">在快速成長之中，屬於這個產業的法規，正在慢慢長出來。</p></div>
+    <div class="article-body">
+      <p class="dropcap">除了後續的糾紛處理，美甲業在產業制度層面的保障機制亦有討論空間。邱毓哲指出，目前美甲業仍被歸類於美容美髮產業之下，但兩者服務性質迥異；他接著舉例，美甲服務相對單純，不涉及高度隱私，也不會造成污染或噪音，具備在住宅區經營的條件，若獨立分類，便不需一併被侷限在特定商業區內營業。</p>
+      <p>此外，若能將美甲業獨立分類，政府在規範營業登記、衛生安全與教學認證上也可更精準。</p>
+      <div class="img-placeholder img-placeholder-short fade-in reveal-image parallax-fast"><img src="images/nail-industry-vs-beauty-industry-chart.jpg" alt="美甲業與美容美髮業產業分類示意圖"><div class="ph-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke="#AFA29A" stroke-width="1.5" stroke-linejoin="round"/><path d="M2 17l10 5 10-5" stroke="#AFA29A" stroke-width="1.5" stroke-linejoin="round"/><path d="M2 12l10 5 10-5" stroke="#AFA29A" stroke-width="1.5" stroke-linejoin="round"/></svg></div><p class="ph-text">美甲業 vs 美容美髮業產業分類示意圖</p></div>
+      <p>美甲耗材與器具的特殊性，亦反映出美甲產業與一般服務業的不同。由於施作過程涉及化學成分應用與人體生理接觸，若缺乏明確的審查標準，將成為消費者的一大隱憂。倪倪分享，為了確保施作品質，他會在預約前主動詢問美甲師使用的指甲油、指甲膠品牌與產地，並檢視重金屬、塑化劑、甲醛含量檢測等是否有台灣檢驗合格標章。</p>
+      <p>施作過程中，他也會觀察器具是否經過高溫滅菌或酒精消毒，「我覺得法規應明文規範禁用檢驗未合格的甲膠，店家也應主動公開使用的耗材成分與品牌。」倪倪說道。</p>
+      <div class="pull-quote reveal-quote soft-reveal"><p>在法律規範並未缺席的情況下，從業認知、制度分類與實務運作之間的落差，正是美甲產業發展的當務之急。</p></div>
+      <p>在法律規範並未缺席的情況下，從業認知、制度分類與實務運作之間的落差，正是美甲展業發展的當務之急。在產業快速成長之際，如何在現行法律下補強針對性的規範，將是提升整體美甲產業專業化水準的關鍵。</p>
+    </div>
+  </div>
+</section>
+<section id="ending" class="reveal-image">
+  <div class="credits">
+    <div class="credit-group"><h4>採訪撰稿</h4><p>蔡孟安、李若水、劉倚瑄</p></div>
+    <div class="credit-group"><h4>插畫設計</h4><p>劉倚瑄</p></div>
+    <div class="credit-group"><h4>網頁製作</h4><p>劉倚瑄</p></div>
+    <div class="credit-group"><h4>發布日期</h4><p>2026 年 4 月 9 日</p></div>
+  </div>
+  <div class="ending-divider"></div>
+  <div class="share-buttons">
+    <a class="share-btn" href="#" id="share-facebook" target="_blank" rel="noopener noreferrer">分享至 Facebook</a>
+    <a class="share-btn" href="#" id="share-line" target="_blank" rel="noopener noreferrer">分享至 LINE</a>
+    <button class="share-btn" type="button" id="copy-link-btn">複製連結</button>
+  </div>
+  <button class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ &nbsp;回到頂部</button>
+  <p class="footer-credit">© 2026 政治大學大學報專題報導 · 保留所有權利</p>
+</section>
+<script>
+  const nav = document.getElementById('main-nav');
+  const bar = document.getElementById('progress-bar');
+  const chapterLinks = document.querySelectorAll('.chapter-link');
+  const navChapterLinks = document.querySelectorAll('.nav-chapters a');
+  const cardChapterLinks = document.querySelectorAll('.ch-nav-item');
+  const sections = Array.from(document.querySelectorAll('section[id="ch1"], section[id="ch2"], section[id="ch3"], section[id="ch4"], section[id="ch5"]'));
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function getNavOffset() {
+    const root = getComputedStyle(document.documentElement);
+    return parseFloat(root.getPropertyValue('--section-offset')) || 112;
+  }
+
+  function scrollToSection(targetId) {
+    const target = document.getElementById(targetId);
+    if (!target) return;
+    const offset = getNavOffset();
+    const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+    window.scrollTo({ top: y, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+  }
+
+  chapterLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const targetId = link.dataset.target || link.getAttribute('href').replace('#', '');
+      if (!targetId) return;
+      e.preventDefault();
+      scrollToSection(targetId);
+    });
+  });
+
+  const btnRead = document.getElementById('btn-read');
+  if (btnRead) {
+    btnRead.addEventListener('click', (e) => {
+      e.preventDefault();
+      scrollToSection('ch1');
+    });
+  }
+
+  const heroImage = document.getElementById('hero-image-placeholder');
+  function handleScrollEffects() {
+    const scrollY = window.scrollY;
+    nav.classList.toggle('scrolled', scrollY > 80);
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (h > 0 ? (scrollY / h * 100) : 0) + '%';
+    if (!prefersReducedMotion && heroImage) {
+      const scale = Math.max(1, 1.04 - Math.min(scrollY, 260) / 900);
+      heroImage.style.transform = `scale(${scale})`;
+    }
+  }
+  window.addEventListener('scroll', handleScrollEffects, { passive: true });
+  handleScrollEffects();
+
+  const revealItems = document.querySelectorAll('.fade-in, .reveal-text, .reveal-image, .reveal-quote, .soft-reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  revealItems.forEach(item => revealObserver.observe(item));
+
+  const parallaxText = document.querySelectorAll('.parallax-slow');
+  const parallaxImage = document.querySelectorAll('.parallax-fast');
+  function handleParallax() {
+    if (prefersReducedMotion) return;
+    const viewportH = window.innerHeight;
+    parallaxText.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.bottom > 0 && rect.top < viewportH) {
+        const offset = (rect.top - viewportH / 2) * -0.025;
+        el.style.setProperty('--parallax-text', `${offset.toFixed(2)}px`);
+      }
+    });
+    parallaxImage.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.bottom > 0 && rect.top < viewportH) {
+        const offset = (rect.top - viewportH / 2) * -0.045;
+        el.style.setProperty('--parallax-image', `${offset.toFixed(2)}px`);
+      }
+    });
+  }
+  window.addEventListener('scroll', handleParallax, { passive: true });
+  window.addEventListener('resize', handleParallax);
+  handleParallax();
+
+  function setActiveChapter(id) {
+    navChapterLinks.forEach(link => link.classList.toggle('active', link.dataset.target === id));
+    cardChapterLinks.forEach(link => link.classList.toggle('active', link.dataset.target === id));
+  }
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) setActiveChapter(entry.target.id);
+    });
+  }, {
+    rootMargin: `-${getNavOffset()}px 0px -55% 0px`,
+    threshold: 0.15
+  });
+  sections.forEach(section => sectionObserver.observe(section));
+
+  const countItems = document.querySelectorAll('.count-up');
+  function animateCount(el) {
+    const end = parseFloat(el.dataset.target || '0');
+    const decimals = parseInt(el.dataset.decimals || '0', 10);
+    const duration = 1800;
+    const start = performance.now();
+    function frame(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = end * eased;
+      el.textContent = current.toFixed(decimals);
+      if (progress < 1) requestAnimationFrame(frame);
+      else el.textContent = end.toFixed(decimals);
+    }
+    requestAnimationFrame(frame);
+  }
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        countItems.forEach(animateCount);
+        statObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.25 });
+  const dataRow = document.getElementById('data-visual-row');
+  if (dataRow) statObserver.observe(dataRow);
+
+  const track = document.getElementById('carousel-track');
+  const slides = Array.from(document.querySelectorAll('.social-slide'));
+  const prevBtn = document.getElementById('carousel-prev');
+  const nextBtn = document.getElementById('carousel-next');
+  const dotsWrap = document.getElementById('carousel-dots');
+  let activeIndex = 0;
+  let startX = 0;
+  let currentX = 0;
+  let isDragging = false;
+  let dragDelta = 0;
+
+  slides.forEach((_, index) => {
+    const dot = document.createElement('button');
+    dot.className = 'carousel-dot' + (index === 0 ? ' active' : '');
+    dot.type = 'button';
+    dot.setAttribute('aria-label', `切換到第 ${index + 1} 張`);
+    dot.addEventListener('click', () => goToSlide(index));
+    dotsWrap.appendChild(dot);
+  });
+  const dots = Array.from(dotsWrap.querySelectorAll('.carousel-dot'));
+
+  function getSlideOffset() {
+    if (!slides.length) return 0;
+    return slides[0].getBoundingClientRect().width;
+  }
+
+  function updateCarousel(animate = true) {
+    const offset = getSlideOffset();
+    if (!offset || !track) return;
+    track.style.transition = animate && !isDragging ? 'transform 0.55s cubic-bezier(.22,.61,.36,1)' : 'none';
+    track.style.transform = `translateX(calc(50% - ${offset / 2}px - ${activeIndex * offset}px + ${dragDelta}px))`;
+    slides.forEach((slide, idx) => slide.classList.toggle('is-active', idx === activeIndex));
+    dots.forEach((dot, idx) => dot.classList.toggle('active', idx === activeIndex));
+  }
+
+  function goToSlide(index) {
+    activeIndex = Math.max(0, Math.min(index, slides.length - 1));
+    dragDelta = 0;
+    updateCarousel(true);
+  }
+
+  if (prevBtn) prevBtn.addEventListener('click', () => goToSlide(activeIndex - 1));
+  if (nextBtn) nextBtn.addEventListener('click', () => goToSlide(activeIndex + 1));
+
+  function pointerDown(clientX) {
+    isDragging = true;
+    startX = clientX;
+    currentX = clientX;
+    dragDelta = 0;
+    updateCarousel(false);
+  }
+  function pointerMove(clientX) {
+    if (!isDragging) return;
+    currentX = clientX;
+    dragDelta = currentX - startX;
+    updateCarousel(false);
+  }
+  function pointerUp() {
+    if (!isDragging) return;
+    isDragging = false;
+    const threshold = Math.min(120, getSlideOffset() * 0.18 || 120);
+    if (dragDelta < -threshold) activeIndex = Math.min(activeIndex + 1, slides.length - 1);
+    if (dragDelta > threshold) activeIndex = Math.max(activeIndex - 1, 0);
+    dragDelta = 0;
+    updateCarousel(true);
+  }
+
+  const carousel = document.getElementById('social-carousel');
+  if (carousel) {
+    carousel.addEventListener('mousedown', (e) => pointerDown(e.clientX));
+    window.addEventListener('mousemove', (e) => pointerMove(e.clientX));
+    window.addEventListener('mouseup', pointerUp);
+    carousel.addEventListener('touchstart', (e) => pointerDown(e.touches[0].clientX), { passive: true });
+    carousel.addEventListener('touchmove', (e) => pointerMove(e.touches[0].clientX), { passive: true });
+    carousel.addEventListener('touchend', pointerUp);
+    window.addEventListener('resize', () => updateCarousel(false));
+    updateCarousel(false);
+  }
+
+  /* mini1 game script */
+  const MINI1_GAME_DATA = {
+    A: {
+      name: 'Mia_Nails_Art', avatar: 'M', avatarBg: '#C9A99A', avatarColor: '#ffffff', posts: '420', followers: '18.5k',
+      avatarImg: 'images/avatar_A.jpg',
+      bio: '🌟 仙女製造機｜完美主義者<br>❌ 不接急單 ❌ 遲到取消不退費<br>✨ 打造無瑕光澤感',
+      highlights: ['美圖', '日常', '客人'],
+      hlImgs: ['images/hl_A_1.jpg', 'images/hl_A_2.jpg', 'images/hl_A_3.jpg'],
+      photos: ['', '', '', '', '', ''],
+      photoImgs: ['images/post_A_1.jpg', 'images/post_A_2.jpg', 'images/post_A_3.jpg', 'images/post_A_4.jpg', 'images/post_A_5.jpg', 'images/post_A_6.jpg'],
+      clues: {
+        bio: { title: '⚠️ 避責條款？', text: '「完美主義者退散」這句常見的免責聲明，有時是美甲師用來合理化自己技術不穩定的擋箭牌。' },
+        highlight: { title: '⚠️ 只有美圖無過程', text: '精選動態全都是客人的美美完工照或炫耀式內容，卻沒有任何關於工具消毒、耗材或施作過程的分享，透明度極低。' },
+        photo: { title: '⚠️ 修圖過度', text: '照片邊緣模糊，手指皮膚毫無紋理甚至像假人。這通常是為了掩飾指甲邊緣沒有處理乾淨而使用的強烈濾鏡與過度磨皮。' }
+      },
+      chatReply: '可以喔，請先匯款全額訂金。注意事項請看首頁，遲到一分鐘直接取消且不退費，現場若覺得有瑕疵概不負責喔！',
+      result: {
+        icon: '⚠',
+        heading: '踩中「修圖陷阱」！',
+        desc: '到了現場才發現，美甲師動作粗魯且狂推銷。成品跟照片完全不一樣，邊緣都是溢膠。當你反應時，她拿出了「完美主義者退散」的條款拒絕補救，甚至你的手指還被磨破皮了！',
+        quote: '「預約時只看 IG 作品風格，容易落入『修圖陷阱』，除了成品落差極大外，甚至可能承擔受傷的風險。」—— 消費者 倪倪',
+        tips: ['小心「仙氣過重」的照片，注意手指關節是否有合理的皮膚紋理。', '觀察指甲根部（甘皮處）是否清晰乾淨，沒有被濾鏡模糊。', '態度極度強硬且規矩嚴苛的店家，若發生消費糾紛通常難以溝通。']
+      }
+    },
+    B: {
+      name: 'K.Studio_', avatar: 'K', avatarBg: '#EDE8DF', avatarColor: '#2C2520', posts: '45', followers: '1.2k',
+      avatarImg: 'images/avatar_B.jpg',
+      bio: '💅 新手美甲師請多指教<br>🎉 本月單色只要 $399！<br>🎓 提供零基礎美甲教學',
+      highlights: ['價目表', '教學', '空檔'],
+      hlImgs: ['images/hl_B_1.jpg', 'images/hl_B_2.jpg', 'images/hl_B_3.jpg'],
+      photos: ['', '', '', '', '', ''],
+      photoImgs: ['images/post_B_1.jpg', 'images/post_B_2.jpg', 'images/post_B_3.jpg', 'images/post_B_4.jpg', 'images/post_B_5.jpg', 'images/post_B_6.jpg'],
+      clues: {
+        bio: { title: '⚠️ 開業即開課？', text: '自稱新手卻已經開始招收「零基礎學生」。在目前台灣缺乏統一門檻的市場中，授課者資歷不深是很大的隱憂。' },
+        highlight: { title: '⚠️ 缺乏作品累積', text: '版面上多是粗糙的特價廣告、空檔表與招生資訊，實際的作品展示非常少，難以判斷其真實技術水平。' },
+        photo: { title: '⚠️ 異常低價與粗糙細節', text: '$399 遠低於市場行情。仔細看照片，甲面不平整、甘皮處有死皮與溢膠。極低價通常伴隨高風險，可能是拿客人的手當練習。' }
+      },
+      chatReply: '現在特價 $399 喔！我雖然剛學沒多久，速度比較慢（大概要 4 小時），但我一定會努力幫你做到好的！',
+      result: {
+        icon: '△',
+        heading: '遇到技術不穩定的新手！',
+        desc: '你花了近四個小時枯坐在那，最後只得到一個凹凸不平且邊緣溢膠的單色指甲。更讓你驚訝的是，這位美甲師自己技術都還不穩定，竟然在旁邊的白板上寫著下個月的美甲課程大綱。',
+        quote: '「如果我是一個初學者，根本不會知道老師需要具備多少知識才能教會自己。授課者本身專業仍未成熟，可能白白浪費時間與學費。」—— 美甲師 Wendy',
+        tips: ['價格遠低於市場行情通常伴隨風險，需有當「練習模特」的心理準備。', '現在台灣開課無門檻，看到「收學生」不代表技術好，需檢視其真實資歷與證照。', '留意作品的厚薄度與平整度，這比顏色搭配更能看出基本功。']
+      }
+    },
+    C: {
+      name: 'Yu_Nail_Design', avatar: 'Y', avatarBg: '#D4C4B0', avatarColor: '#ffffff', posts: '120', followers: '4.5k',
+      avatarImg: 'images/avatar_C.jpg',
+      bio: '🌿 專注日式極致前置保養<br>🏥 器具皆經醫療級高溫滅菌<br>📜 TNA 合格 / JNEC 檢定',
+      highlights: ['消毒流程', '使用耗材', '證照展示'],
+      hlImgs: ['images/hl_C_1.jpg', 'images/hl_C_2.jpg', 'images/hl_C_3.jpg'],
+      photos: ['', '', '', '', '', ''],
+      photoImgs: ['images/post_C_1.jpg', 'images/post_C_2.jpg', 'images/post_C_3.jpg', 'images/post_C_4.jpg', 'images/post_C_5.jpg', 'images/post_C_6.jpg'],
+      clues: {
+        bio: { title: '✨ 專業認證', text: '標示具備國家級 TNA 與國際級 JNEC 證照。雖然證照不能代表全部審美，但絕對能保證基礎的衛生與安全觀念。' },
+        highlight: { title: '✨ 資訊透明', text: '主動將「高溫滅菌流程」與「使用耗材」放在精選動態，代表店家願意負責任並讓消費者安心。' },
+        photo: { title: '✨ 展現實力', text: '敢放「原相機極致微距近照」，且指甲周圍的甘皮處理得乾淨無死角，不依賴濾鏡，代表對自己的基礎保養技術非常有自信。' }
+      },
+      chatReply: '您好！沒問題。預約前想先跟您確認指甲是否有受傷或感染狀況呢？另外，我們使用的是日系檢驗合格膠，施作過程約需 2.5 小時，請預留時間喔！',
+      result: {
+        icon: '✓',
+        heading: '恭喜！找到注重細節的專業美甲師',
+        desc: '這次體驗非常棒！美甲師主動告知使用的耗材品牌。前置保養非常仔細，工具也是從高溫消毒袋中拿出來的。指甲平整且維持了超過一個月，讓你感到這筆錢花得非常值得。',
+        quote: '「法規應明文規範禁用檢驗未合格的甲膠，店家也應主動公開使用的耗材成分。我也會觀察器具是否經過高溫滅菌或酒精消毒。」—— 消費者 倪倪',
+        tips: ['優先選擇願意公開「消毒流程」與「耗材品牌（重金屬、甲醛檢測）」的店家。', '作品照片敢放「原相機近照」，看出指緣乾淨度，才是真功夫。', '事前溝通願意了解顧客指甲健康狀況的從業者，通常更具備專業素養。']
+      }
+    }
+  };
+
+  let mini1CurrentProfile = null;
+  let mini1CluesFound = new Set();
+  const mini1PhotoBgColors = ['#C9A99A', '#E8D5CB', '#D4C4B0', '#5C4F46', '#8C7D74', '#EDE8DF'];
+
+  function mini1GetScreens() {
+    return document.querySelectorAll('#mini1 .mini1-game-container > div:not(#mini1-clue-modal)');
+  }
+
+  window.mini1ShowScreen = function mini1ShowScreen(screenName) {
+    mini1GetScreens().forEach(el => el.classList.add('mini1-screen-hidden'));
+    const target = document.getElementById(`mini1-${screenName}-screen`);
+    if (target) {
+      target.classList.remove('mini1-screen-hidden');
+      target.classList.remove('mini1-fade-in');
+      void target.offsetWidth;
+      target.classList.add('mini1-fade-in');
+    }
+    const gameRoot = document.querySelector('#mini1 .mini1-game-container');
+    if (gameRoot) gameRoot.scrollTop = 0;
+  };
+
+  window.mini1OpenProfile = function mini1OpenProfile(id) {
+    mini1CurrentProfile = id;
+    mini1CluesFound = new Set();
+    const data = MINI1_GAME_DATA[id];
+    const clueCounter = document.getElementById('mini1-clue-counter');
+    const btnDm = document.getElementById('mini1-btn-dm');
+    if (clueCounter) clueCounter.textContent = '已調查線索：0/3';
+    if (btnDm) btnDm.disabled = true;
+
+    const avatarEl = document.getElementById('mini1-inv-avatar');
+    if (avatarEl) {
+      avatarEl.style.background = data.avatarBg;
+      avatarEl.style.color = data.avatarColor;
+      avatarEl.innerHTML = `<img src="${data.avatarImg}" alt="${data.avatar}"><span>${data.avatar}</span>`;
+    }
+    document.getElementById('mini1-inv-name').textContent = data.name;
+    document.getElementById('mini1-inv-posts').textContent = data.posts;
+    document.getElementById('mini1-inv-followers').textContent = data.followers;
+
+    const bioEl = document.getElementById('mini1-clue-bio');
+    bioEl.innerHTML = data.bio;
+    bioEl.classList.remove('mini1-investigated');
+
+    const highlightEl = document.getElementById('mini1-clue-highlight');
+    highlightEl.innerHTML = data.highlights.map((h, i) => `
+      <div class="mini1-highlight-item">
+        <div class="mini1-highlight-thumb">
+          <img src="${data.hlImgs[i]}" alt="${h}">
+          <span>${h.substring(0, 1)}</span>
+        </div>
+        <span class="mini1-highlight-label">${h}</span>
+      </div>
+    `).join('');
+    highlightEl.classList.remove('mini1-investigated');
+
+    const photoEl = document.getElementById('mini1-clue-photo');
+    photoEl.innerHTML = data.photos.map((p, i) => `
+      <div class="mini1-photo-item" style="background:${mini1PhotoBgColors[i % mini1PhotoBgColors.length]}">
+        <img src="${data.photoImgs[i]}" alt="${p}">
+        <span>${p}</span>
+      </div>
+    `).join('');
+    photoEl.classList.remove('mini1-investigated');
+
+    mini1ShowScreen('investigate');
+  };
+
+  window.mini1DiscoverClue = function mini1DiscoverClue(type) {
+    if (!mini1CurrentProfile) return;
+    const target = document.getElementById(`mini1-clue-${type}`);
+    if (target) target.classList.add('mini1-investigated');
+    mini1CluesFound.add(type);
+    const data = MINI1_GAME_DATA[mini1CurrentProfile].clues[type];
+    const clueCounter = document.getElementById('mini1-clue-counter');
+    const btnDm = document.getElementById('mini1-btn-dm');
+    if (clueCounter) clueCounter.textContent = `已調查線索：${mini1CluesFound.size}/3`;
+    if (mini1CluesFound.size >= 3 && btnDm) btnDm.disabled = false;
+    document.getElementById('mini1-modal-title').textContent = data.title;
+    document.getElementById('mini1-modal-text').textContent = data.text;
+    document.getElementById('mini1-clue-modal').classList.remove('mini1-screen-hidden');
+  };
+
+  window.mini1CloseModal = function mini1CloseModal() {
+    document.getElementById('mini1-clue-modal').classList.add('mini1-screen-hidden');
+  };
+
+  function mini1AppendMessage(sender, text) {
+    const container = document.getElementById('mini1-chat-messages');
+    if (!container) return;
+    const bubble = document.createElement('div');
+    bubble.className = `mini1-bubble ${sender === 'me' ? 'mini1-bubble-me' : 'mini1-bubble-them'} mini1-fade-in`;
+    bubble.textContent = text;
+    container.appendChild(bubble);
+    container.scrollTop = container.scrollHeight;
+  }
+
+  window.mini1StartChat = function mini1StartChat() {
+    if (!mini1CurrentProfile) return;
+    const data = MINI1_GAME_DATA[mini1CurrentProfile];
+    const chatMessages = document.getElementById('mini1-chat-messages');
+    const chatActions = document.getElementById('mini1-chat-actions');
+    document.getElementById('mini1-chat-header-name').textContent = data.name;
+    if (chatMessages) chatMessages.innerHTML = '';
+    if (chatActions) chatActions.style.visibility = 'hidden';
+    mini1ShowScreen('chat');
+    setTimeout(() => {
+      mini1AppendMessage('me', '你好，想預約下週末做單色～');
+      setTimeout(() => {
+        const typing = document.createElement('div');
+        typing.className = 'mini1-typing';
+        typing.id = 'mini1-typing-indicator';
+        typing.innerHTML = '<span class="mini1-typing-dot"></span><span class="mini1-typing-dot"></span><span class="mini1-typing-dot"></span>';
+        chatMessages.appendChild(typing);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        setTimeout(() => {
+          const typingNode = document.getElementById('mini1-typing-indicator');
+          if (typingNode) typingNode.remove();
+          mini1AppendMessage('them', data.chatReply);
+          if (chatActions) chatActions.style.visibility = 'visible';
+        }, 2200);
+      }, 900);
+    }, 400);
+  };
+
+  window.mini1ShowResult = function mini1ShowResult() {
+    if (!mini1CurrentProfile) return;
+    const data = MINI1_GAME_DATA[mini1CurrentProfile].result;
+    document.getElementById('mini1-result-icon').textContent = data.icon;
+    document.getElementById('mini1-result-heading').textContent = data.heading;
+    document.getElementById('mini1-result-desc').textContent = data.desc;
+    document.getElementById('mini1-result-quote').textContent = data.quote;
+    document.getElementById('mini1-result-tips').innerHTML = data.tips.map(tip => `<li>${tip}</li>`).join('');
+    mini1ShowScreen('result');
+  };
+
+  window.mini1ResetGame = function mini1ResetGame() {
+    mini1CurrentProfile = null;
+    mini1CluesFound = new Set();
+    mini1CloseModal();
+    mini1ShowScreen('start');
+  };
+
+
+  // ── Dispute Game ──
+  const imageAssets = {
+    cover: "images/game-dispute-cover.jpg",
+    customerNini: "images/character-customer-nini.jpg",
+    nailArtist: "images/character-nail-artist.jpg",
+    lineChat: "images/visual-line-chat-dispute.jpg",
+    bookingPolicy: "images/visual-booking-policy.jpg",
+  };
+
+  const disputeScoreLabels = {
+    evidence: "證據完整度",
+    rights: "權益保障度",
+    time: "時間成本",
+    legalRisk: "法律風險"
+  };
+
+  const disputeSourceBasis = [
+    "行政院消費者保護會提供線上消費申訴系統。",
+    "若第一次申訴未獲妥適處理，消費者可進一步提出第二次申訴或申請調解。",
+    "消費者也可依案件情況評估民事訴訟或小額訴訟。",
+    "業者應保留預約規則、對話紀錄與處理方案，降低交易爭議。"
+  ];
+
+  const disputeGameData = {
+    customer: {
+      roleLabel: "顧客視角",
+      scenarioTitle: "IG 預約後，成品與安全都出了問題",
+      scenarioImage: imageAssets.lineChat,
+      scenarioImageName: "visual-line-chat-dispute.jpg",
+      scenarioText: "你在 IG 上預約了一間看起來很漂亮的美甲工作室，花了近 2,000 元做款式。施作後發現四隻手指破皮、甲面不平、封層有氣泡，溢出的指甲油也沒有清理。你向美甲師反應後，對方只願賠 500 元。",
+      initialScores: { evidence: 28, rights: 30, time: 22, legalRisk: 18 },
+      guideTitle: "顧客遇到美甲糾紛，可以這樣做",
+      guide: [
+        { title: "保留證據", text: "照片、付款紀錄、預約須知、對話截圖、施作前後照片。" },
+        { title: "先與業者溝通", text: "用文字清楚列出問題、時間、金額與訴求。" },
+        { title: "第一次申訴", text: "可使用行政院消保會線上申訴系統，或透過地方政府消費申訴管道。" },
+        { title: "第二次申訴／調解", text: "若第一次申訴未獲妥適處理，可進一步申請第二次申訴或調解。" },
+        { title: "必要時訴訟", text: "可評估民事訴訟或小額訴訟。" }
+      ],
+      endings: [
+        {
+          title: "公審衝動型",
+          condition: scores => scores.legalRisk >= 62,
+          text: "你很快選擇公開發文，但證據與敘述若不完整，可能讓事情變得更複雜。社群壓力不一定能取代正式程序。"
+        },
+        {
+          title: "自認倒楣型",
+          condition: scores => scores.rights <= 45,
+          text: "你選擇快速結束爭議，這很貼近許多小額消費糾紛的現實。但也正因如此，許多問題從未真正進入制度。"
+        },
+        {
+          title: "理性蒐證型",
+          condition: scores => scores.evidence >= 58 && scores.legalRisk <= 48,
+          text: "你保留了照片、付款紀錄與對話截圖，也用文字提出明確訴求。若私下協商不成，你已經具備進入正式申訴或調解流程的基礎。"
+        },
+        {
+          title: "理性蒐證型",
+          condition: () => true,
+          text: "你開始掌握處理糾紛的方向。若能再補齊證據與正式溝通紀錄，後續申訴或調解會更有基礎。"
+        }
+      ],
+      questions: [
+        {
+          title: "顧客 Q1：當下發現問題，你第一步會怎麼做？",
+          options: [
+            { label: "A", text: "先忍下來，回家再看看會不會自己好", scoreDelta: { evidence: -12, rights: -10, time: -2, legalRisk: 0 }, feedback: "你暫時避開衝突，但也錯過第一時間留下證據的機會。若傷口或成品狀況後來改變，會更難說明當下情況。" },
+            { label: "B", text: "立刻在限時動態發文公審", scoreDelta: { evidence: -4, rights: 2, time: 8, legalRisk: 26 }, feedback: "公開發文可能帶來壓力，但若證據不足或文字過度情緒化，也可能增加法律風險。" },
+            { label: "C", text: "拍下施作結果、受傷狀況，保存付款紀錄與對話截圖", scoreDelta: { evidence: 24, rights: 16, time: 6, legalRisk: -8 }, feedback: "你先保留了照片、付款紀錄、預約須知與對話紀錄。這些資料會成為後續溝通、申訴或調解時的重要依據。" },
+            { label: "D", text: "只口頭跟美甲師抱怨，不留下紀錄", scoreDelta: { evidence: -10, rights: -8, time: 0, legalRisk: 2 }, feedback: "口頭抱怨可能讓對方知道你的不滿，但後續若說法不一致，很難證明你曾經提出哪些問題。" }
+          ]
+        },
+        {
+          title: "顧客 Q2：你要怎麼和美甲師溝通？",
+          options: [
+            { label: "A", text: "用文字訊息清楚列出問題、消費時間、金額與希望處理方式", scoreDelta: { evidence: 18, rights: 18, time: 8, legalRisk: -8 }, feedback: "文字溝通能留下處理紀錄，也能清楚呈現雙方是否有協商意願。" },
+            { label: "B", text: "只打電話抱怨，不留下任何紀錄", scoreDelta: { evidence: -12, rights: -8, time: 2, legalRisk: 4 }, feedback: "電話溝通很即時，但沒有紀錄時，後續很難證明你提出過哪些訴求，對方又如何回應。" },
+            { label: "C", text: "直接威脅對方「不退錢就讓你紅」", scoreDelta: { evidence: -4, rights: 0, time: 6, legalRisk: 24 }, feedback: "威脅式溝通容易讓爭議升高，也可能讓你從消費者變成被指控的一方。" },
+            { label: "D", text: "封鎖對方，避免繼續爭執", scoreDelta: { evidence: -8, rights: -14, time: -4, legalRisk: 0 }, feedback: "封鎖能暫時結束不舒服的對話，但也讓協商中斷，後續要主張權益會更困難。" }
+          ]
+        },
+        {
+          title: "顧客 Q3：對方只願賠 500 元，你無法接受，下一步？",
+          options: [
+            { label: "A", text: "放棄，因為金額不高", scoreDelta: { evidence: 0, rights: -20, time: -10, legalRisk: -2 }, feedback: "這是許多小額消費糾紛的現實選擇，但也會讓問題停在制度之外。" },
+            { label: "B", text: "找朋友一起去洗負評", scoreDelta: { evidence: -6, rights: -2, time: 10, legalRisk: 28 }, feedback: "集體洗負評可能讓壓力變大，但也容易衍生名譽與言論責任問題。" },
+            { label: "C", text: "把所有對話截圖上網，要求網友評理", scoreDelta: { evidence: 2, rights: 2, time: 12, legalRisk: 22 }, feedback: "公開截圖可能獲得聲援，但若包含個資、脈絡不完整或措辭過激，風險也會上升。" },
+            { label: "D", text: "透過行政院消保會線上申訴系統或地方政府消費申訴管道提出申訴", scoreDelta: { evidence: 16, rights: 24, time: 16, legalRisk: -8 }, feedback: "若私下協商不成，可以進入正式申訴流程。申訴時應準備雙方資料、消費內容、爭議事實與訴求。" }
+          ]
+        },
+        {
+          title: "顧客 Q4：第一次申訴沒有得到滿意處理，怎麼辦？",
+          options: [
+            { label: "A", text: "只能接受原本結果", scoreDelta: { evidence: 0, rights: -16, time: -6, legalRisk: 0 }, feedback: "第一次申訴不是唯一終點。若處理結果不理想，仍可評估後續申訴或調解。" },
+            { label: "B", text: "申請第二次申訴或消費爭議調解", scoreDelta: { evidence: 12, rights: 22, time: 18, legalRisk: -6 }, feedback: "第一次申訴未妥適處理時，可進一步申請第二次申訴或消費爭議調解，讓第三方協助雙方協商。" },
+            { label: "C", text: "刪掉紀錄重新開始", scoreDelta: { evidence: -24, rights: -12, time: -2, legalRisk: 4 }, feedback: "刪掉紀錄會直接削弱你的證據基礎，後續即使想繼續處理也會更困難。" },
+            { label: "D", text: "改成只在社群留言提醒別人", scoreDelta: { evidence: -4, rights: -4, time: 8, legalRisk: 18 }, feedback: "提醒他人不一定不行，但若只依賴社群留言，可能無法實際解決你的消費爭議。" }
+          ]
+        },
+        {
+          title: "顧客 Q5：如果調解仍未成功？",
+          options: [
+            { label: "A", text: "一定只能放棄", scoreDelta: { evidence: 0, rights: -18, time: -8, legalRisk: -2 }, feedback: "放棄可以節省時間，但不是制度上唯一選項。仍可視金額、證據與意願評估法律途徑。" },
+            { label: "B", text: "只能繼續在網路上發文", scoreDelta: { evidence: -4, rights: -4, time: 10, legalRisk: 22 }, feedback: "網路發文可能提供情緒出口，但不一定能替代正式法律程序，也可能讓風險變高。" },
+            { label: "C", text: "視金額與證據，考慮民事訴訟或小額訴訟", scoreDelta: { evidence: 14, rights: 20, time: 24, legalRisk: -6 }, feedback: "若仍無法解決，消費者可以評估是否提起民事訴訟。金額較小的案件，也可考慮小額訴訟程序。" },
+            { label: "D", text: "找人私下施壓", scoreDelta: { evidence: -8, rights: -4, time: 8, legalRisk: 30 }, feedback: "私下施壓可能讓爭議失控，也可能讓你承擔新的法律風險。" }
+          ]
+        }
+      ]
+    },
+    artist: {
+      roleLabel: "美甲師視角",
+      scenarioTitle: "剛獨立接案，最怕規則沒講清楚",
+      scenarioImage: imageAssets.bookingPolicy,
+      scenarioImageName: "visual-booking-policy.jpg",
+      scenarioText: "你是一位剛獨立接案的美甲師。顧客透過 IG 預約高難度款式，只傳了一張濾鏡很重的參考圖，沒有明確說明甲型、顏色與可接受落差。你擔心後續產生成品爭議、退款要求或放鳥問題。",
+      initialScores: { evidence: 26, rights: 32, time: 24, legalRisk: 20 },
+    
+      guideTitle: "美甲師面對糾紛，可以這樣自保",
+      guide: [
+        { title: "預約前寫清楚規則", text: "訂金、遲到、取消、放鳥、修改、退款。" },
+        { title: "施作前確認需求", text: "甲型、款式、價格、是否能完全還原參考圖。" },
+        { title: "施作中保留紀錄", text: "必要時保存施作前後照片與雙方對話。" },
+        { title: "發生爭議時提出補救方案", text: "避免情緒化回應，盡量用文字紀錄。" },
+        { title: "收到申訴時正式回覆", text: "準備預約規則、對話紀錄、施作說明與處理方案。" }
+      ],
+      endings: [
+        {
+          title: "逃避被動型",
+          condition: scores => scores.legalRisk >= 62 || scores.evidence <= 42,
+          text: "你沒有留下足夠紀錄，也未正式回覆爭議。若消費者進入申訴流程，你會變得相當被動。"
+        },
+        {
+          title: "事前預防型",
+          condition: scores => scores.evidence >= 58 && scores.legalRisk <= 48,
+          text: "你事前寫清楚規則，也保留需求確認與對話紀錄。即使發生爭議，也比較能說明雙方責任。"
+        },
+        {
+          title: "臨場補救型",
+          condition: scores => scores.rights >= 46 && scores.rights <= 72 && scores.legalRisk <= 62,
+          text: "你不一定每一步都完美，但願意溝通與補救，能避免爭議迅速升高。未來仍需要強化事前規則。"
+        },
+        {
+          title: "臨場補救型",
+          condition: () => true,
+          text: "你已經知道發生爭議時不能只靠情緒處理。接下來若能把預約規則與需求確認寫得更清楚，就能降低更多風險。"
+        }
+      ],
+      questions: [
+        {
+          title: "美甲師 Q1：預約前你要怎麼自保？",
+          options: [
+            { label: "A", text: "只傳價格，不多說規則，避免嚇跑客人", scoreDelta: { evidence: -12, rights: -12, time: -2, legalRisk: 12 }, feedback: "只談價格能快速成交，但遇到取消、放鳥或退款爭議時，你會缺少可依循的規則。" },
+            { label: "B", text: "提供預約須知，寫清楚訂金、遲到、取消、放鳥、修改與退款規則，並請顧客確認", scoreDelta: { evidence: 24, rights: 20, time: 8, legalRisk: -10 }, feedback: "事前規則與文字確認能降低放鳥、退款與修改爭議，也是美甲師保護自己的第一步。" },
+            { label: "C", text: "只在限時動態說明一次，不另外確認", scoreDelta: { evidence: -4, rights: -6, time: 0, legalRisk: 8 }, feedback: "限時動態容易消失，也不一定能證明顧客已閱讀並同意。最好仍用文字留下確認。" },
+            { label: "D", text: "先讓顧客來店，再看情況處理", scoreDelta: { evidence: -10, rights: -8, time: 6, legalRisk: 10 }, feedback: "現場才談規則容易讓雙方期待不同，也可能讓你在衝突中被迫讓步。" }
+          ]
+        },
+        {
+          title: "美甲師 Q2：顧客傳來高難度參考圖，你怎麼處理？",
+          options: [
+            { label: "A", text: "直接說可以，避免顧客轉去別家", scoreDelta: { evidence: -8, rights: -6, time: 8, legalRisk: 14 }, feedback: "沒有先確認落差與施作限制，成品不符預期時很容易變成退款爭議。" },
+            { label: "B", text: "不報價，做完再算", scoreDelta: { evidence: -10, rights: -10, time: 10, legalRisk: 18 }, feedback: "價格不透明會讓顧客覺得被臨時加價，也讓後續協商更困難。" },
+            { label: "C", text: "只回覆「可以做類似的」但不說明差異", scoreDelta: { evidence: -4, rights: -4, time: 4, legalRisk: 8 }, feedback: "『類似』的範圍太模糊。沒有說明差異，雙方對完成品的想像可能完全不同。" },
+            { label: "D", text: "先確認可完成程度、預估價格、施作時間，並說明成品可能與濾鏡圖有差異", scoreDelta: { evidence: 20, rights: 18, time: 10, legalRisk: -10 }, feedback: "高難度款式需要先確認可還原程度、價格與時間。清楚說明落差能降低成品不符的爭議。" }
+          ]
+        },
+        {
+          title: "美甲師 Q3：顧客放鳥，你要怎麼處理最穩？",
+          options: [
+            { label: "A", text: "依照事前約定的訂金與取消規則處理，並保留預約紀錄", scoreDelta: { evidence: 18, rights: 20, time: 4, legalRisk: -8 }, feedback: "如果事前有訂金與取消規則，遇到放鳥時比較能主張自己的時間成本與損失。" },
+            { label: "B", text: "直接公開顧客姓名與帳號", scoreDelta: { evidence: -6, rights: -2, time: 8, legalRisk: 28 }, feedback: "公開個資或帳號可能衍生新的爭議。就算你是受害者，也不代表可以用高風險方式處理。" },
+            { label: "C", text: "事後才臨時要求對方付全額", scoreDelta: { evidence: -8, rights: -4, time: 8, legalRisk: 16 }, feedback: "若沒有事前約定，事後才要求全額很難被接受，也容易被視為不合理。" },
+            { label: "D", text: "沒有辦法，只能吞下損失", scoreDelta: { evidence: -4, rights: -18, time: -6, legalRisk: 0 }, feedback: "放鳥損失常讓美甲師無奈，但若每次都吞下來，表示預約制度仍需要補強。" }
+          ]
+        },
+        {
+          title: "美甲師 Q4：顧客反應受傷或成品不滿意，你應該怎麼做？",
+          options: [
+            { label: "A", text: "直接說「注意事項有寫不接完美主義者」", scoreDelta: { evidence: -4, rights: -10, time: 2, legalRisk: 20 }, feedback: "這種回應容易被解讀為逃避責任，尤其當顧客反應的是受傷或明顯瑕疵時，爭議可能擴大。" },
+            { label: "B", text: "封鎖對方避免糾纏", scoreDelta: { evidence: -12, rights: -14, time: -4, legalRisk: 26 }, feedback: "封鎖會讓你失去說明與補救的機會。如果對方申訴，你也會顯得更被動。" },
+            { label: "C", text: "先確認狀況、保留紀錄，提出合理補救方案或協商方式", scoreDelta: { evidence: 18, rights: 18, time: 12, legalRisk: -10 }, feedback: "冷靜確認、保留紀錄並提出補救方案，可以降低爭議擴大，也能在後續申訴時呈現處理態度。" },
+            { label: "D", text: "要求對方不能發文", scoreDelta: { evidence: -4, rights: -4, time: 4, legalRisk: 18 }, feedback: "要求對方不能發文可能讓顧客更反感，也不一定能阻止爭議擴散。更穩的方式是先處理問題本身。" }
+          ]
+        },
+        {
+          title: "美甲師 Q5：如果收到消保機關來函？",
+          options: [
+            { label: "A", text: "不理會，反正金額不高", scoreDelta: { evidence: -12, rights: -16, time: -4, legalRisk: 30 }, feedback: "不回覆會讓你在程序中變得被動，也可能讓對方說法成為主要依據。" },
+            { label: "B", text: "在期限內正式回覆，提供對話紀錄、預約規則、施作說明與補救方案", scoreDelta: { evidence: 22, rights: 20, time: 16, legalRisk: -12 }, feedback: "收到申訴後應正式回覆，提供事前規則、溝通紀錄與處理方案。逃避回覆會讓自己更被動。" },
+            { label: "C", text: "只回覆「我沒有錯」", scoreDelta: { evidence: -6, rights: -8, time: 2, legalRisk: 14 }, feedback: "只表達立場不足以處理爭議。你需要提出紀錄、規則與實際處理方案。" },
+            { label: "D", text: "關閉社群帳號", scoreDelta: { evidence: -10, rights: -16, time: -2, legalRisk: 24 }, feedback: "關閉帳號看似避開壓力，但也可能讓你失去溝通紀錄與營業信任。" }
+          ]
+        }
+      ]
+    }
+  };
+
+  const disputeState = {
+    role: null,
+    questionIndex: 0,
+    scores: { evidence: 0, rights: 0, time: 0, legalRisk: 0 },
+    selectedOption: null
+  };
+
+  function disputeClamp(num) {
+    return Math.max(0, Math.min(100, num));
+  }
+
+  function disputeSetScreen(screenName, options = {}) {
+    const { scroll = false } = options;
+    document.querySelectorAll('#dispute-game .dispute-screen').forEach(screen => {
+      screen.classList.toggle('is-active', screen.id === `dispute-${screenName}-screen`);
+    });
+    if (scroll) {
+      const card = document.getElementById('dispute-game-card');
+      if (card) {
+        card.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
+      }
+    }
+  }
+
+  function disputeApplyImageFallback(scope = document) {
+    scope.querySelectorAll('#dispute-game img').forEach(img => {
+      img.addEventListener('error', () => img.classList.add('is-missing'), { once: true });
+      if (!img.getAttribute('src')) img.classList.add('is-missing');
+    });
+  }
+
+  function disputeRenderBars(targetId, scores = disputeState.scores) {
+    const target = document.getElementById(targetId);
+    if (!target) return;
+    target.innerHTML = Object.keys(disputeScoreLabels).map(key => {
+      const value = disputeClamp(scores[key] || 0);
+      return `
+        <div class="dispute-score-item">
+          <div class="dispute-score-row">
+            <span>${disputeScoreLabels[key]}</span>
+            <span>${value}</span>
+          </div>
+          <div class="dispute-score-track"><div class="dispute-score-fill" style="width:${value}%"></div></div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  function disputeStartRole(role, options = {}) {
+    const { scroll = false } = options;
+    disputeState.role = role;
+    disputeState.questionIndex = 0;
+    disputeState.selectedOption = null;
+    disputeState.scores = { ...disputeGameData[role].initialScores };
+    const data = disputeGameData[role];
+    document.getElementById('dispute-scenario-title').textContent = data.scenarioTitle;
+    document.getElementById('dispute-scenario-text').textContent = data.scenarioText;
+    const scenarioImg = document.getElementById('dispute-scenario-img');
+    const scenarioPlaceholder = document.getElementById('dispute-scenario-placeholder');
+    scenarioImg.classList.remove('is-missing');
+    scenarioImg.src = data.scenarioImage;
+    scenarioPlaceholder.textContent = data.scenarioImageName;
+    disputeSetScreen('scenario', { scroll });
+  }
+
+  function disputeRenderQuestion(options = {}) {
+    const { scroll = false } = options;
+    const data = disputeGameData[disputeState.role];
+    const question = data.questions[disputeState.questionIndex];
+    disputeState.selectedOption = null;
+    document.getElementById('dispute-progress-text').textContent = `${data.roleLabel}｜第 ${disputeState.questionIndex + 1} 題 / 共 ${data.questions.length} 題`;
+    document.getElementById('dispute-question-title').textContent = question.title;
+    const optionsWrap = document.getElementById('dispute-options');
+    optionsWrap.innerHTML = question.options.map((option, index) => `
+      <button class="dispute-option-btn" type="button" data-index="${index}">
+        <span class="dispute-option-letter">${option.label}</span>
+        <span class="dispute-option-text">${option.text}</span>
+      </button>
+    `).join('');
+    document.getElementById('dispute-feedback').innerHTML = '<p>選擇一個處理方式，系統會顯示這一步可能帶來的影響。</p>';
+    document.getElementById('dispute-next-btn').disabled = true;
+    document.getElementById('dispute-next-btn').textContent = disputeState.questionIndex === data.questions.length - 1 ? '查看結果' : '下一題';
+    disputeRenderBars('dispute-score-bars');
+    optionsWrap.querySelectorAll('.dispute-option-btn').forEach(btn => {
+      btn.addEventListener('click', () => disputeChooseOption(Number(btn.dataset.index)));
+    });
+    disputeSetScreen('question', { scroll });
+  }
+
+  function disputeChooseOption(index) {
+    if (disputeState.selectedOption !== null) return;
+    const question = disputeGameData[disputeState.role].questions[disputeState.questionIndex];
+    const option = question.options[index];
+    disputeState.selectedOption = option;
+    Object.entries(option.scoreDelta).forEach(([key, delta]) => {
+      disputeState.scores[key] = disputeClamp((disputeState.scores[key] || 0) + delta);
+    });
+    document.querySelectorAll('#dispute-options .dispute-option-btn').forEach((btn, btnIndex) => {
+      btn.classList.add('is-locked');
+      btn.classList.toggle('is-selected', btnIndex === index);
+    });
+    document.getElementById('dispute-feedback').innerHTML = `<p>${option.feedback}</p>`;
+    document.getElementById('dispute-next-btn').disabled = false;
+    disputeRenderBars('dispute-score-bars');
+  }
+
+  function disputeNextQuestion() {
+    const data = disputeGameData[disputeState.role];
+    if (disputeState.questionIndex < data.questions.length - 1) {
+      const currentScrollY = window.scrollY;
+      disputeState.questionIndex += 1;
+      disputeRenderQuestion({ scroll: false });
+      window.requestAnimationFrame(() => {
+        window.scrollTo({ top: currentScrollY, behavior: 'auto' });
+      });
+    } else {
+      disputeRenderResult({ scroll: true });
+    }
+  }
+
+  function disputePickEnding(data) {
+    return data.endings.find(ending => ending.condition(disputeState.scores));
+  }
+
+  function disputeRenderResult(options = {}) {
+    const { scroll = true } = options;
+    const data = disputeGameData[disputeState.role];
+    const ending = disputePickEnding(data);
+    document.getElementById('dispute-ending-title').textContent = ending.title;
+    document.getElementById('dispute-ending-text').textContent = ending.text;
+    disputeRenderBars('dispute-final-score-bars');
+
+    document.getElementById('dispute-guide-title').textContent = data.guideTitle;
+    document.getElementById('dispute-guide-list').innerHTML = data.guide.map((step, index) => `
+      <div class="dispute-guide-step">
+        <span class="dispute-guide-num">${index + 1}</span>
+        <div><strong>${step.title}</strong><p>${step.text}</p></div>
+      </div>
+    `).join('');
+
+   
+
+    document.getElementById('dispute-source-list').innerHTML = disputeSourceBasis.map(item => `<li>${item}</li>`).join('');
+    disputeApplyImageFallback(document.getElementById('dispute-result-screen'));
+    disputeSetScreen('result', { scroll });
+  }
+
+  function disputeReset(role = disputeState.role) {
+    if (!role) {
+      disputeSetScreen('start', { scroll: true });
+      return;
+    }
+    disputeStartRole(role, { scroll: true });
+  }
+
+  function disputeInit() {
+    const root = document.getElementById('dispute-game');
+    if (!root) return;
+    disputeApplyImageFallback(root);
+    root.querySelectorAll('.dispute-role-card').forEach(card => {
+      card.addEventListener('click', () => disputeStartRole(card.dataset.role));
+    });
+    document.getElementById('dispute-start-questions').addEventListener('click', () => disputeRenderQuestion({ scroll: true }));
+    document.getElementById('dispute-next-btn').addEventListener('click', disputeNextQuestion);
+    document.getElementById('dispute-change-role').addEventListener('click', () => disputeSetScreen('start', { scroll: true }));
+    document.getElementById('dispute-replay-same').addEventListener('click', () => disputeReset(disputeState.role));
+    document.getElementById('dispute-replay-other').addEventListener('click', () => {
+      const otherRole = disputeState.role === 'customer' ? 'artist' : 'customer';
+      disputeReset(otherRole);
+    });
+    disputeRenderBars('dispute-score-bars', { evidence: 0, rights: 0, time: 0, legalRisk: 0 });
+  }
+  disputeInit();
+
+  window.selectMI2 = function selectMI2(el) {
+    document.querySelectorAll('.mi2-option').forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+    const reveal = document.getElementById('mi-reveal-2');
+    const opt = el.querySelector('.mi2-opt-num').textContent;
+    const msgs = {
+      '選項 A': '私下溝通是最常見的路徑，但若美甲師不配合，沒有書面紀錄將讓你很難爭取應有的賠償。',
+      '選項 B': '公開評論有其效果，但也有法律風險。確保陳述屬實，以免反被業者提告。',
+      '選項 C': '這是最有法律依據的做法，但正如林傳健消保官所說，小額糾紛往往讓人覺得「划不來」。',
+      '選項 D': '你的感受非常真實——這正是美甲消費糾紛案件數遠低於實際發生數的原因。'
+    };
+    if (reveal) {
+      reveal.innerHTML = `<p style="font-family:var(--serif);font-size:1rem;color:var(--text-mid);font-style:italic;text-align:center;font-weight:300;">${msgs[opt] || '感謝你的選擇。'}</p>`;
+      reveal.classList.add('visible');
+    }
+  };
+
+  const flipCards = document.querySelectorAll('.certificate-growth-visual .card-container');
+  flipCards.forEach((card) => {
+    card.addEventListener('click', () => {
+      const isFlipped = card.classList.toggle('is-flipped');
+      card.setAttribute('aria-expanded', String(isFlipped));
+    });
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const isFlipped = card.classList.toggle('is-flipped');
+        card.setAttribute('aria-expanded', String(isFlipped));
+      }
+    });
+  });
+
+  const currentUrl = window.location.href;
+  const currentTitle = document.title;
+  const encodedUrl = encodeURIComponent(currentUrl);
+  const facebookBtn = document.getElementById('share-facebook');
+  const lineBtn = document.getElementById('share-line');
+  const copyLinkBtn = document.getElementById('copy-link-btn');
+
+  if (facebookBtn) facebookBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+  if (lineBtn) lineBtn.href = `https://social-plugins.line.me/lineit/share?url=${encodedUrl}`;
+
+  if (copyLinkBtn) {
+    copyLinkBtn.addEventListener('click', async () => {
+      const originalText = copyLinkBtn.textContent;
+      try {
+        await navigator.clipboard.writeText(currentUrl);
+      } catch (_) {
+        const textArea = document.createElement('textarea');
+        textArea.value = currentUrl;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+      }
+      copyLinkBtn.textContent = '已複製連結';
+      copyLinkBtn.disabled = true;
+      setTimeout(() => {
+        copyLinkBtn.textContent = originalText;
+        copyLinkBtn.disabled = false;
+      }, 1800);
+    });
+  }
+
+  if (navigator.share) {
+    [facebookBtn, lineBtn].forEach((btn) => {
+      if (!btn) return;
+      btn.addEventListener('click', async (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          try {
+            await navigator.share({ title: currentTitle, url: currentUrl });
+          } catch (_) {}
+        }
+      });
+    });
+  }
+
+  console.assert(document.querySelectorAll('.certificate-growth-visual .card-container').length === 3, '應有三張證照翻轉卡');
+  console.assert(typeof window.mini1OpenProfile === 'function', 'mini1OpenProfile 應存在');
+  console.assert(typeof window.selectMI2 === 'function', 'selectMI2 應存在');
+</script>
+</body>
+</html>
